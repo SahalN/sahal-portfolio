@@ -11,10 +11,10 @@ This repository contains the source code for my personal portfolio website, show
 - Sections: About, Projects, Skills, Contact.
 
 ## Technologies Used
-- **Frontend**: React, Tailwind CSS
+- **Frontend**: Next.js, Tailwind CSS
 - **Backend**: Node.js (Optional if applicable)
 - **Version Control**: Git
-- **Deployment**: Vercel/Netlify (or the hosting service you are using)
+- **Deployment**: Vercel
 
 ## How to Run Locally
 1. Clone this repository:
