@@ -16,7 +16,3 @@ This repository contains the source code for my personal portfolio website, show
 - **Version Control**: Git
 - **Deployment**: Vercel
 
-## How to Run Locally
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/username/sahal-portfolio.git
