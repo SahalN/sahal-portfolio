@@ -3,27 +3,27 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <nav>
-      <ul className='flex gap-2'>
+      <ul className='flex gap-6 pt-2'>
         <li>
           <Link
             href='/'
-            className='font-semibold text-orange-800 hover:underline'>
-            Home
+            className='text-xl font-bold text-black hover:underline'>
+            Sahal Nurdin
           </Link>
         </li>
         <li className='ml-auto'>
           <Link
-            href='/projects'
-            className='font-semibold text-orange-800 hover:underline'>
-            projects
+            href='/about'
+            prefetch={false}
+            className='font-semibold text-black hover:underline'>
+            About
           </Link>
         </li>
         <li>
           <Link
-            href='/about'
-            prefetch={false}
-            className='font-semibold text-orange-800 hover:underline'>
-            About
+            href='/projects'
+            className='text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'>
+            projects
           </Link>
         </li>
       </ul>
