@@ -3,6 +3,7 @@
 import NavBar from "../components/NavBar";
 import "./globals.css";
 import { inter, plusJakartaSans } from "./fonts";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: {
@@ -22,14 +23,7 @@ export default function RootLayout({ children }) {
         </header>
         <main className='py-3 px-72 grow'>{children}</main>
         <footer className='py-3 text-xs text-center border-t px-72 text-slate-50'>
-          &copy;
-          <a
-            href='https://www.linkedin.com/in/muhammadsahalnurdin/'
-            target='_blank'
-            className='text-orange-800 hover:underline'>
-            Muhammad Sahal Nurdin
-          </a>
-          2024
+          <Footer />
         </footer>
       </body>
     </html>
