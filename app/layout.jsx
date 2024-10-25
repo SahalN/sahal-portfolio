@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <header className='sticky top-0 z-50 py-3 bg-white px-72 backdrop-filter backdrop-blur-lg bg-opacity-30'>
           <NavBar />
         </header>
-        <main className='py-3 px-72 grow'>{children}</main>
+        <main className='justify-center py-3 px-72 grow '>{children}</main>
         <footer className='py-3 text-xs text-center border-t px-72 text-slate-50'>
           <Footer />
         </footer>
