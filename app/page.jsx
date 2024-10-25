@@ -40,10 +40,10 @@ export default async function HomePage() {
           <h2 className='text-lg font-semibold text-black'>MY SKILLS</h2>
         </div>
         <div>
-          <h1 className='text-6xl font-bold text-black'>What I do</h1>
+          <h1 className='py-3 text-6xl font-bold text-black'>What I do</h1>
         </div>
         <div>
-          <p className='text-2xl font-semibold text-center text-gray-500'>
+          <p className='py-3 text-2xl font-semibold text-center text-gray-500'>
             I'm not just a developer; I'm a digital dreamweaver. Crafting
             immersive online experiences is not just a job but my calling.
             Discover below how I can help you.
@@ -53,12 +53,16 @@ export default async function HomePage() {
 
       <div className='grid grid-cols-3 my-32 gap-36'>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img
+              src='images/fluent_design-ideas-32-filled.png'
+              alt=''
+              className='w-8'
+            />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>
-              Frontend Web Development:
+              Frontend Web Development
             </h3>
           </div>
           <div>
@@ -70,8 +74,12 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img
+              src='images/carbon_application-mobile.png'
+              alt=''
+              className='w-8'
+            />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>
@@ -87,8 +95,12 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img
+              src='images/uil_programming-language.png'
+              alt=''
+              className='w-8'
+            />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>Technology Stack</h3>
@@ -102,8 +114,12 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img
+              src='images/icon-park-outline_smart-optimization.png'
+              alt=''
+              className='w-8'
+            />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>Web Optimization</h3>
@@ -117,8 +133,12 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img
+              src='images/fluent_design-ideas-32-filled.png'
+              alt=''
+              className='w-8'
+            />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>
@@ -135,8 +155,8 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='text-center justify-self-center'>
-          <div>
-            <img src='' alt='' />
+          <div className='flex items-center justify-center'>
+            <img src='images/mingcute_bug-fill.png' alt='' className='w-8' />
           </div>
           <div>
             <h3 className='text-2xl font-bold text-black'>
@@ -154,11 +174,11 @@ export default async function HomePage() {
       </div>
 
       <div className='flex flex-row items-center gap-3 my-32 md:flex-col'>
-        <div>
+        <div className='pb-1'>
           <h1 className='text-3xl font-bold text-black'>My Recent Projects</h1>
         </div>
         <div>
-          <p className='text-gray-500'>
+          <p className='pb-8 text-gray-500'>
             Whether you have a mobile app idea that needs to come to life or a
             website that requires a facelift, I'm here to turn your digital
             dreams into reality.
@@ -274,7 +294,7 @@ export default async function HomePage() {
         <div className='flex flex-row items-center md:flex-col'>
           <div>
             <Link href='/projects'>
-              <h1>See All Projects</h1>
+              <p className='text-gray-700'>See All Projects</p>
             </Link>
           </div>
         </div>
@@ -315,9 +335,9 @@ export default async function HomePage() {
         </div>
         <div className='flex flex-1'>
           <div className='grid grid-rows-3'>
-            <div className='flex flex-col md:flex-row'>
+            <div className='flex flex-col gap-2 md:flex-row'>
               <div>
-                <img src='' alt='logo' />
+                <img src='images/univ.png' alt='logo' className='w-8' />
               </div>
               <div>
                 <p className='text-gray-500'>
@@ -325,17 +345,17 @@ export default async function HomePage() {
                 </p>
               </div>
             </div>
-            <div className='flex flex-col md:flex-row'>
+            <div className='flex flex-col gap-2 md:flex-row'>
               <div>
-                <img src='' alt='logo' />
+                <img src='images/cert1.png' alt='logo' className='w-8' />
               </div>
               <div>
                 <p className='text-gray-500'>Certified Web Developer</p>
               </div>
             </div>
-            <div className='flex flex-col md:flex-row'>
+            <div className='flex flex-col gap-2 md:flex-row'>
               <div>
-                <img src='' alt='logo' />
+                <img src='images/cert2.png' alt='logo' className='w-8' />
               </div>
               <div>
                 <p className='text-gray-500'>
@@ -348,10 +368,10 @@ export default async function HomePage() {
       </div>
 
       <div className='flex flex-row items-center justify-center my-32 md:flex-col'>
-        <div>
+        <div className='py-3'>
           <h2 className='text-3xl font-semibold '>Contact Me</h2>
         </div>
-        <div>
+        <div className='mb-2'>
           <p className='text-gray-500'>
             Ready to get started? Feel free to reach out through the contact
             form, and let's embark on a journey of innovation and success.
