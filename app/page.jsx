@@ -292,9 +292,9 @@ export default async function HomePage() {
           </div>
         </div>
         <div className='flex flex-row items-center md:flex-col'>
-          <div>
+          <div className='mt-5 animate-bounce '>
             <Link href='/projects'>
-              <p className='text-gray-700'>See All Projects</p>
+              <p className='text-gray-700 '>See All Projects</p>
             </Link>
           </div>
         </div>

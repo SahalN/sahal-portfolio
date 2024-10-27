@@ -3,18 +3,20 @@
 import Heading from "../../components/Heading";
 
 export const metadata = {
-  title: "About"
-}
-
+  title: "About",
+};
 
 export default function About() {
   return (
     <>
       <Heading>About</Heading>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor fugiat,
-        iusto assumenda obcaecati accusamus eligendi facere nam animi. Doloribus
-        ut illum nihil quidem eos sed atque fugit omnis sapiente sint?
+        This website is the professional portfolio of Muhammad Sahal Nurdin, a
+        skilled web developer. It highlights his work, skills, and achievements
+        in web development, showcasing various projects he has created. Through
+        this portfolio, Muhammad Sahal Nurdin shares his expertise in designing
+        and building user-centered applications and websites, reflecting his
+        passion for technology and commitment to continuous learning.
       </p>
     </>
   );

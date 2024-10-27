@@ -1,25 +1,30 @@
 ---
-title: "Healme App"
-date : "2024-7-20"
+title: "HealMe"
+date: "2023-10-27"
 image: "/images/cerita-desain.png"
 ---
-# HealMe
 
-**Platform kesehatan yang membantu pengguna untuk mengelola kesehatan mental dan fisik mereka.**
+<!-- @format -->
 
-## Deskripsi Proyek
-HealMe adalah aplikasi yang ditujukan untuk mendukung kesehatan mental dan fisik pengguna melalui pelatihan, artikel, dan komunitas yang mendukung. Dengan berbagai fitur yang dirancang untuk membantu pengguna mencapai kesejahteraan yang lebih baik, HealMe bertujuan untuk menjadi sahabat dalam perjalanan kesehatan setiap individu.
+**Organization repository:** [HealMe on GitHub](https://github.com/healme-app)  
+**HealMe - Your Path to Faster, Smarter Wound Healing**
 
-## Fitur Utama
-- **Artikel Kesehatan:** Koleksi artikel yang informatif tentang kesehatan mental, fisik, dan kebiasaan hidup sehat.
-- **Program Pelatihan:** Rencana pelatihan yang dipersonalisasi untuk membantu pengguna mencapai tujuan kesehatan mereka.
-- **Forum Komunitas:** Ruang untuk berbagi pengalaman, mendapatkan dukungan, dan berinteraksi dengan sesama pengguna.
-- **Notifikasi:** Pembaruan dan pengingat untuk aktivitas dan program yang diikuti oleh pengguna.
+## What is HealMe?
 
-## Teknologi yang Digunakan
-- **Backend:** Node.js, Express
-- **Frontend:** React, Tailwind CSS
-- **Database:** MongoDB
-- **Versi Kontrol:** Git
+HealMe is an innovative application designed to detect wounds and recommend appropriate healing treatments. It aims to provide both immediate and ongoing support for individuals in managing their wounds effectively. By leveraging advanced technology, HealMe ensures that users receive accurate diagnostics and tailored healing advice to promote quicker recovery and overall well-being.
 
-## Struktur Proyek
+With HealMe, users can easily track the progress of their wounds, receive reminders for treatment schedules, and access a wealth of information on wound care. This application is particularly beneficial for those who need consistent wound management, ensuring that no step in the healing process is overlooked.
+
+## Key Benefits of Using HealMe
+
+- **Accurate Diagnostics:** HealMe uses advanced algorithms to provide precise wound detection and analysis.
+- **Tailored Recommendations:** Receive personalized treatment plans and healing advice based on the specific type of wound.
+- **User-friendly Interface:** Designed to be intuitive and easy to navigate, even for those with limited technical experience.
+- **Progress Tracking:** Monitor the healing process with detailed progress reports and reminders.
+- **Resource Access:** Access comprehensive information on wound care and management, enhancing overall user knowledge.
+
+> HealMe empowers users to take control of their wound care journey, ensuring they have the tools needed for efficient and effective recovery.
+
+---
+
+With HealMe, wound management is simplified and streamlined, making consistent care accessible to everyone.

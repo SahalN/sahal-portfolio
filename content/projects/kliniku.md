@@ -1,25 +1,34 @@
 ---
-title: "Kliniku App"
-date : "2024-8-20"
-image: "/images/cerita-desain.png"
+title: "Kliniku"
+date: "2023-04-26"
+image: "/images/kliniku-landing-page.png"
 ---
-# Kliniku
 
-**Kliniku**
+<!-- @format -->
 
-## Deskripsi Proyek
-HealMe adalah aplikasi yang ditujukan untuk mendukung kesehatan mental dan fisik pengguna melalui pelatihan, artikel, dan komunitas yang mendukung. Dengan berbagai fitur yang dirancang untuk membantu pengguna mencapai kesejahteraan yang lebih baik, HealMe bertujuan untuk menjadi sahabat dalam perjalanan kesehatan setiap individu.
+**View the repository here:** [Kliniku](https://github.com/SahalN/Production-Kliniku)  
+**Kliniku - Your Health, Just a Click Away**
 
-## Fitur Utama
-- **Artikel Kesehatan:** Koleksi artikel yang informatif tentang kesehatan mental, fisik, dan kebiasaan hidup sehat.
-- **Program Pelatihan:** Rencana pelatihan yang dipersonalisasi untuk membantu pengguna mencapai tujuan kesehatan mereka.
-- **Forum Komunitas:** Ruang untuk berbagi pengalaman, mendapatkan dukungan, dan berinteraksi dengan sesama pengguna.
-- **Notifikasi:** Pembaruan dan pengingat untuk aktivitas dan program yang diikuti oleh pengguna.
+## Project Overview
 
-## Teknologi yang Digunakan
-- **Backend:** Node.js, Express
-- **Frontend:** React, Tailwind CSS
-- **Database:** MongoDB
-- **Versi Kontrol:** Git
+Kliniku is an application for scheduling doctor appointments through a dashboard interface, designed to streamline the reservation process for patients and doctors.
 
-## Struktur Proyek
+## Key Features
+
+- **Admin and User Login:** Separate login portals for administrators and regular users.
+- **Doctor and Patient Reservations:** Easily make and manage appointments.
+- **Profile Updates:** Users can update their profiles with relevant information.
+
+## Technologies Used
+
+- **Backend:** Node.js with Mongoose and Express for API and server management.
+- **Frontend:** React.js for an interactive and dynamic user interface.
+- **Database:** MongoDB for flexible, scalable data storage.
+- **Authentication:** JSON Web Token (JWT) for secure access, with `moment` and `bcryptjs` libraries for time management and password encryption.
+- **Version Control:** Git to manage and track changes in code.
+
+> **Development Timeline:** The project was completed in one month.
+
+---
+
+Kliniku is designed to make healthcare scheduling easier and more accessible, providing a seamless experience for users.
