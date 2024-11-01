@@ -16,11 +16,11 @@ export default async function HomePage() {
     <>
       <div className='flex flex-col justify-center gap-8 my-32 md:flex-row'>
         <div className='flex flex-col justify-center flex-1 text-left '>
-          <h1 className='text-6xl font-extrabold text-gray-700 '>
+          <h1 className='text-6xl font-extrabold text-gray-700 dark:text-white'>
             Welcome to my Web Development Portofolio!
           </h1>
 
-          <p className='py-2 text-xl font-normal text-gray-400'>
+          <p className='py-2 text-xl font-normal text-gray-400 dark:text-gray-100'>
             I'm Sahal Nurdin, a passionate web developer based in Indonesia.
             Here, you'll get a glimpse of my journey in the world of web
             development, where creativity meets functionality.
@@ -37,13 +37,13 @@ export default async function HomePage() {
 
       <div className='flex flex-row items-center justify-center my-32 md:flex-col'>
         <div className='flex-1'>
-          <h2 className='text-lg font-semibold text-black'>MY SKILLS</h2>
+          <h2 className='text-lg font-semibold dark:text-white'>MY SKILLS</h2>
         </div>
         <div>
-          <h1 className='py-3 text-6xl font-bold text-black'>What I do</h1>
+          <h1 className='py-3 text-6xl font-bold dark:text-white'>What I do</h1>
         </div>
         <div>
-          <p className='py-3 text-2xl font-semibold text-center text-gray-500'>
+          <p className='py-3 text-2xl font-semibold text-center text-gray-500 dark:text-gray-100'>
             I'm not just a developer; I'm a digital dreamweaver. Crafting
             immersive online experiences is not just a job but my calling.
             Discover below how I can help you.
@@ -61,12 +61,12 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
               Frontend Web Development
             </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               Creating beautiful and functional web experiences is my forte.
               Using the latest technologies and best practices, I design and
               build websites that captivate and engage users.
@@ -82,12 +82,12 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
               Mobile App Development
             </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               I specialize in creating responsive and intuitive mobile apps that
               work seamlessly across iOS & Android devices. From concept to
               deployment, I handle every stage of the development process.
@@ -103,10 +103,12 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>Technology Stack</h3>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
+              Technology Stack
+            </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               I'm well-versed in the industry's most popular frontend
               technologies, including HTML5, CSS3, JavaScript, and frameworks
               like React and React Native.
@@ -122,10 +124,12 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>Web Optimization</h3>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
+              Web Optimization
+            </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               Performance matters. I optimize websites and apps for speed,
               ensuring your users enjoy a fast and responsive experience, which
               in turn boosts user satisfaction and SEO rankings.
@@ -141,12 +145,12 @@ export default async function HomePage() {
             />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
               User-Centric Design
             </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               My development goes hand-in-hand with an eye for design. I create
               user interfaces that are not only functional but also
               aesthetically pleasing, providing a seamless and enjoyable user
@@ -159,12 +163,12 @@ export default async function HomePage() {
             <img src='images/mingcute_bug-fill.png' alt='' className='w-8' />
           </div>
           <div>
-            <h3 className='text-2xl font-bold text-black'>
+            <h3 className='text-2xl font-bold text-black dark:text-white'>
               Testing and Quality Assurance
             </h3>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               I rigorously test and debug applications to guarantee a bug-free
               and secure environment for users. Your peace of mind is as
               important to me as the functionality of your project.
@@ -175,10 +179,12 @@ export default async function HomePage() {
 
       <div className='flex flex-row items-center gap-3 my-32 md:flex-col'>
         <div className='pb-1'>
-          <h1 className='text-3xl font-bold text-black'>My Recent Projects</h1>
+          <h1 className='text-3xl font-bold text-black dark:text-white'>
+            My Recent Projects
+          </h1>
         </div>
         <div>
-          <p className='pb-8 text-gray-500'>
+          <p className='pb-8 text-gray-500 dark:text-gray-100'>
             Whether you have a mobile app idea that needs to come to life or a
             website that requires a facelift, I'm here to turn your digital
             dreams into reality.
@@ -294,7 +300,7 @@ export default async function HomePage() {
         <div className='flex flex-row items-center md:flex-col'>
           <div className='mt-5 animate-bounce '>
             <Link href='/projects'>
-              <p className='text-gray-700 '>See All Projects</p>
+              <p className='text-gray-700 dark:text-white'>See All Projects</p>
             </Link>
           </div>
         </div>
@@ -320,10 +326,12 @@ export default async function HomePage() {
       <div className='flex flex-col items-center justify-between my-32 md:flex-row'>
         <div className='flex-1 text-left '>
           <div>
-            <h2 className='text-2xl font-bold text-black'>My Resume</h2>
+            <h2 className='text-2xl font-bold text-black dark:text-white'>
+              My Resume
+            </h2>
           </div>
           <div>
-            <p className='text-gray-500'>
+            <p className='text-gray-500 dark:text-gray-100'>
               Highly skilled and creative Web Developer with 5+ years of
               experience in crafting visually stunning and functionally robust
               websites and web applications.
@@ -340,7 +348,7 @@ export default async function HomePage() {
                 <img src='images/univ.png' alt='logo' className='w-8' />
               </div>
               <div>
-                <p className='text-gray-500'>
+                <p className='text-gray-500 dark:text-gray-100'>
                   Bachelor of Science in Computer Science
                 </p>
               </div>
@@ -350,7 +358,9 @@ export default async function HomePage() {
                 <img src='images/cert1.png' alt='logo' className='w-8' />
               </div>
               <div>
-                <p className='text-gray-500'>Certified Web Developer</p>
+                <p className='text-gray-500 dark:text-gray-100'>
+                  Certified Web Developer
+                </p>
               </div>
             </div>
             <div className='flex flex-col gap-2 md:flex-row'>
@@ -358,7 +368,7 @@ export default async function HomePage() {
                 <img src='images/cert2.png' alt='logo' className='w-8' />
               </div>
               <div>
-                <p className='text-gray-500'>
+                <p className='text-gray-500 dark:text-gray-100'>
                   Frontend Framework Proficiency Certification
                 </p>
               </div>
@@ -372,21 +382,25 @@ export default async function HomePage() {
           <h2 className='text-3xl font-semibold '>Contact Me</h2>
         </div>
         <div className='mb-2'>
-          <p className='text-gray-500'>
+          <p className='text-gray-500 dark:text-gray-100'>
             Ready to get started? Feel free to reach out through the contact
             form, and let's embark on a journey of innovation and success.
           </p>
         </div>
 
-        <div class='grid sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl bg-white font-[sans-serif]'>
+        <div class='grid sm:grid-cols-2 items-start gap-16 p-4 mx-auto max-w-4xl bg-white dark:bg-gray-800   font-[sans-serif] rounded-xl'>
           <div>
-            <h1 class='text-gray-800 text-3xl font-extrabold'>Let's Talk</h1>
-            <p class='text-sm text-gray-500 mt-4'>
+            <h1 class='text-gray-800 text-3xl font-extrabold dark:text-white'>
+              Let's Talk
+            </h1>
+            <p class='text-sm text-gray-500 mt-4 dark:text-gray-200'>
               Have some big idea or brand to develop and need help? Then reach
               out we'd love to hear about your project and provide help.
             </p>
             <div class='mt-12'>
-              <h2 class='text-gray-800 text-base font-bold'>Email</h2>
+              <h2 class='text-gray-800 text-base font-bold dark:text-white'>
+                Email
+              </h2>
               <ul class='mt-4'>
                 <li class='flex items-center'>
                   <div class='bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0'>
@@ -404,7 +418,7 @@ export default async function HomePage() {
                   </div>
                   <a
                     href='javascript:void(0)'
-                    class='text-gray-500 text-sm ml-4'>
+                    class='text-gray-500 text-sm ml-4 dark:text-white'>
                     <small class='block'>Mail</small>
                     <strong>sahalnurdin@gmail.com</strong>
                   </a>

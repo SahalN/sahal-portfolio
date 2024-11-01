@@ -1,13 +1,12 @@
 /** @format */
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 export default function NavBar() {
   return (
     <nav>
-      <ul className='flex gap-6 pt-2'>
+      <ul className='flex items-center gap-6'>
         <li>
-          <Link
-            href='/'
-            className='text-xl font-bold text-black hover:underline'>
+          <Link href='/' className='text-xl font-bold hover:underline'>
             Sahal Nurdin
           </Link>
         </li>
@@ -15,16 +14,22 @@ export default function NavBar() {
           <Link
             href='/about'
             prefetch={false}
-            className='font-semibold text-black hover:underline'>
-            About
+            className='text-base font-semibold hover:underline'>
+            About Me
           </Link>
         </li>
+
         <li>
           <Link
             href='/projects'
-            className='text-white bg-gray-900 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'>
-            projects
+            className='text-base font-semibold hover:underline'>
+            Projects
           </Link>
+        </li>
+        <li>
+          <div>
+            <ThemeToggle />
+          </div>
         </li>
       </ul>
     </nav>
