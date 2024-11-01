@@ -36,14 +36,15 @@ export default async function ProjectPage({ params: { slug } }) {
           className='mx-auto mt-5 mb-5 rounded aspect-auto sm:aspect-video w-[320px] h-[180px] sm:w-[640px] sm:h-[360px]'
           sandbox='allow-scripts allow-same-origin' // use with caution
         /> */}
-
-        <img
-          src={project.image}
-          alt={project.title}
-          width='640'
-          height='360'
-          className='mx-auto mt-5 mb-5 rounded sm:aspect-video w-[320px] h-[180px] sm:w-[640px] sm:h-[360px]'
-        />
+        <div className=''>
+          <img
+            src={project.image}
+            alt={project.title}
+            width='640'
+            height='360'
+            className='mx-auto mt-5 mb-5 rounded-xl sm:aspect-video w-[320px] h-[180px] sm:w-[640px] sm:h-[360px] transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110'
+          />
+        </div>
         <article
           dangerouslySetInnerHTML={{ __html: project.body }}
           className='max-w-screen-sm prose text-left prose-slate dark:prose-invert'></article>
