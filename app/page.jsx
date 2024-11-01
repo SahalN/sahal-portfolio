@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getFeaturedProject } from "../lib/projects";
 import DownloadButton from "../components/DownloadButton";
 import Transition from "../components/Transition";
+import ThreeScene from "../components/ThreeScene";
 
 export const metadata = {
   title: "Sahal's Portfolio",
@@ -15,7 +16,15 @@ export default async function HomePage() {
   return (
     <>
       <Transition>
-        <div className='flex flex-col justify-center gap-8 my-32 md:flex-row'>
+        <div className='flex flex-row justify-center gap-8 my-32 md:flex-col'>
+          <div className='flex items-center justify-center flex-1'>
+            {/* <img
+              src='/images/sahal.png'
+              alt='foto-sahal'
+              className='w-[600px] rounded-xl'
+            /> */}
+            <ThreeScene />
+          </div>
           <div className='flex flex-col justify-center flex-1 text-left '>
             <h1 className='text-6xl font-extrabold text-gray-700 dark:text-white'>
               Welcome to my Web Development Portofolio!
@@ -25,13 +34,6 @@ export default async function HomePage() {
               Here, you'll get a glimpse of my journey in the world of web
               development, where creativity meets functionality.
             </p>
-          </div>
-          <div className='flex justify-center flex-1'>
-            <img
-              src='/images/sahal.png'
-              alt='foto-sahal'
-              className='w-[600px] rounded-xl'
-            />
           </div>
         </div>
       </Transition>
