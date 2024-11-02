@@ -5,6 +5,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"; // Import GLTFLoader
 
 const ThreeScene = () => {
   const mountRef = useRef(null); // Ref to the mount point for the Three.js scene
@@ -12,7 +13,7 @@ const ThreeScene = () => {
   useEffect(() => {
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Aspect ratio is 1 for a square canvas
+    const camera = new THREE.PerspectiveCamera(90, 1, 0.1, 1000); // Aspect ratio is 1 for a square canvas
     const renderer = new THREE.WebGLRenderer({ alpha: true });
 
     const size = 640; // Set both width and height to 640px for a square canvas
@@ -25,16 +26,33 @@ const ThreeScene = () => {
 
     mountRef.current.appendChild(renderer.domElement);
 
-    // Create a simple cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
+    let model; // Declare model here so it can be accessed in animate
 
-    // Optional: Scale down the cube if needed
-    cube.scale.set(1, 1, 1); // Half the default size
-    scene.add(cube);
+    // Load the 3D model using GLTFLoader
+    const loader = new GLTFLoader();
+    loader.load(
+      "/gun.glb", // Corrected path to the .glb file
+      (gltf) => {
+        model = gltf.scene; // Assign to the outer-scope variable
+        model.scale.set(0.5, 0.5, 0.5);
+        // model.position.set(0, 0, 0);
+        scene.add(model);
+      },
+      undefined,
+      (error) => {
+        console.error("Error loading model", error);
+      }
+    );
 
-    camera.position.z = 2; // Set camera position
+    camera.position.x = 2; // Set camera position
+
+    // Add lights to the scene
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white ambient light
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Bright directional light
+    directionalLight.position.set(2, 2, 5); // Position it slightly to the side and above
+    scene.add(directionalLight);
 
     // Add OrbitControls for interaction
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -45,9 +63,11 @@ const ThreeScene = () => {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      controls.update(); // Update controls
-      cube.rotation.x += 0.01; // Rotate the cube
-      cube.rotation.y += 0.01;
+      controls.update();
+      if (model) {
+        // model.rotation.x -= 0.01; // Rotate the model if it's loaded
+        model.rotation.y += 0.01;
+      }
       renderer.render(scene, camera);
     };
 
@@ -55,7 +75,10 @@ const ThreeScene = () => {
 
     // Cleanup on unmount
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      if (mountRef.current) {
+        mountRef.current.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
     };
   }, []);
 

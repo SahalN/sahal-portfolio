@@ -7,7 +7,7 @@ import Transition from "../components/Transition";
 import ThreeScene from "../components/ThreeScene";
 
 export const metadata = {
-  title: "Sahal's Portfolio",
+  title: "Sahal Nurdin - HomePage",
 };
 
 export default async function HomePage() {

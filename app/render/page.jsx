@@ -4,15 +4,14 @@ import Heading from "../../components/Heading";
 import Transition from "../../components/Transition";
 
 export const metadata = {
-  title: "About",
+  title: "Render",
 };
 
-export default function About() {
+export default function Render() {
   return (
     <>
       <Transition>
-  
-        <Heading>About</Heading>
+        <Heading>Render</Heading>
         <p>
           This website is the professional portfolio of Muhammad Sahal Nurdin, a
           skilled web developer. It highlights his work, skills, and
