@@ -2,7 +2,6 @@
 title: "Takoyaki Babon"
 date: "2025-09-11"
 image: "/images/cerita-desain.png"
-tag: "Slicing"
 ---
 
 <!-- @format -->
