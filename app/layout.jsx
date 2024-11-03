@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import "./globals.css";
 import { inter, plusJakartaSans } from "./fonts";
 import Footer from "../components/Footer";
+import ThreeDimension from "../components/ThreeDimension";
 
 export const metadata = {
   title: {
@@ -17,14 +18,15 @@ export default function RootLayout({ children }) {
     <html
       lang='en'
       className={`${inter.variable} ${plusJakartaSans.variable} `}>
-      <body className='flex flex-col min-h-screen bg-[#F0E7DB] dark:bg-[#202023] text-black dark:text-white '>
-        <header className='sticky top-0 z-50 md:px-[590px] backdrop-filter backdrop-blur-lg bg-opacity-40 '>
+      <body className='flex flex-col bg-[#F0E7DB] dark:bg-[#202023] text-black dark:text-white '>
+        <header className=''>
           <NavBar />
+          <ThreeDimension />
         </header>
-        <main className='justify-center py-3 grow md:px-[590px]'>
+        <main className='relative -mt-72 justify-center py-3 grow md:px-[590px] '>
           {children}
         </main>
-        <footer className='py-3 text-xs text-center border-t text-slate-50 md:px-[590px]'>
+        <footer className='py-3 text-xs text-center  text-slate-50 md:px-[590px]'>
           <Footer />
         </footer>
       </body>

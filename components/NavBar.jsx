@@ -1,18 +1,23 @@
 /** @format */
+
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
 export default function NavBar() {
   return (
-    <nav>
-      <ul className='flex items-center gap-6 mt-3 '>
+    <nav className='fixed top-0 left-0 right-0 z-50 md:px-[590px] backdrop-filter backdrop-blur-lg bg-opacity-40'>
+      <ul className='flex items-center gap-6 my-3'>
         <li>
           <Link
             href='/'
             className='text-xl font-bold hover:underline font-plusJakartaSans'>
             <div className='flex flex-row items-center gap-2'>
               <div>
-                <img src='images/glosrg.jpg' alt='sahal-logo' className='w-6' />
+                <img
+                  src='images/glosrg.jpg'
+                  alt='sahal-logo'
+                  className='w-6 rounded-full'
+                />
               </div>
               <div> Sahal Nurdin</div>
             </div>
@@ -29,7 +34,7 @@ export default function NavBar() {
           <Link
             href='/render'
             prefetch={false}
-            className='text-base font-normal hover:underline '>
+            className='text-base font-normal hover:underline'>
             Renders
           </Link>
         </li>
@@ -43,7 +48,7 @@ export default function NavBar() {
         </li>
         <li>
           <a href='https://github.com/SahalN/sahal-portfolio' target='_blank'>
-            <div className='flex flex-row items-center gap-2 hover:text-[#88ccca] '>
+            <div className='flex flex-row items-center gap-2 hover:text-[#88ccca]'>
               <div className='hover:text-[#88ccca]'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -54,14 +59,13 @@ export default function NavBar() {
                 </svg>
               </div>
               <div>
-                <p classname='font-normal hover:underline hover:text-[#88ccca]'>
+                <p className='font-normal hover:underline hover:text-[#88ccca]'>
                   Source
                 </p>
               </div>
             </div>
           </a>
         </li>
-
         <li>
           <div>
             <ThemeToggle />

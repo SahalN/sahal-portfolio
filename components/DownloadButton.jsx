@@ -6,15 +6,8 @@ export default function DownloadButton() {
       <a href='/pdfs/CV.pdf' download>
         <button
           type='button'
-          style={{
-            padding: "10px 20px",
-            backgroundColor: "gray",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}>
-          Download Resume
+          className='px-8 py-3 font-semibold rounded-lg bg-[#319795] text-white'>
+          My Resume
         </button>
       </a>
     </div>

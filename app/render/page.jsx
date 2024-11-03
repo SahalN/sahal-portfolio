@@ -1,6 +1,7 @@
 /** @format */
 
 import Heading from "../../components/Heading";
+
 import Transition from "../../components/Transition";
 
 export const metadata = {
