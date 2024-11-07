@@ -4,7 +4,7 @@ import Heading from "../../components/Heading";
 import Transition from "../../components/Transition";
 
 export const metadata = {
-  title: "Blog",
+  title: "Blogs",
 };
 
 export default function Blog() {

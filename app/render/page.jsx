@@ -5,7 +5,7 @@ import Heading from "../../components/Heading";
 import Transition from "../../components/Transition";
 
 export const metadata = {
-  title: "Render",
+  title: "Renders",
 };
 
 export default function Render() {

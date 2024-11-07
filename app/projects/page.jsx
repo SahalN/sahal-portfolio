@@ -28,7 +28,7 @@ export default async function ProjectsPage() {
                   <img
                     src={project.image}
                     alt='ceritadesain'
-                    className='w-full mb-2 rounded-xl '
+                    className='object-cover w-full h-auto mb-2 rounded-xl '
                   />
                   <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                     {project.title}

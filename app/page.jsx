@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  // const project = await getFeaturedProject();
+  const project = await getFeaturedProject();
   // console.log("[HomePage]");
   return (
     <>
@@ -178,6 +178,30 @@ export default async function HomePage() {
       </Transition>
 
       <Transition>
+        <div className='px-32 mb-3'>
+          <h2 className='mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
+            My Recent Project
+          </h2>
+        </div>
+
+        <div className='flex justify-center px-32 rounded'>
+          <Link href={`/projects/${project.slug}`}>
+            <img
+              src={project.image}
+              alt='ceritadesain'
+              width='320'
+              height='180'
+              className='rounded-xl'
+            />
+
+            <h2 className='py-1 font-normal text-center font-plusJakartaSans sm:px-2'>
+              {project.title}
+            </h2>
+          </Link>
+        </div>
+      </Transition>
+
+      <Transition>
         <div className='flex px-32 mt-5 md:flex-col'>
           <div>
             <h2 className='mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
@@ -185,27 +209,27 @@ export default async function HomePage() {
             </h2>
           </div>
 
-          <div class='gap-16 p-4 mx-auto max-w-4xl bg-white dark:bg-gray-800   font-[sans-serif] rounded-xl'>
+          <div class='gap-16 p-4 mx-auto max-w-4xl    font-[sans-serif] rounded-xl'>
             <form class='ml-auto space-y-4'>
               <input
                 type='text'
                 placeholder='Name'
-                class='w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent'
+                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b] '
               />
               <input
                 type='email'
                 placeholder='Email'
-                class='w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent'
+                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b] '
               />
               <input
                 type='text'
                 placeholder='Subject'
-                class='w-full rounded-md py-3 px-4 bg-gray-100 text-gray-800 text-sm outline-blue-500 focus:bg-transparent'
+                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
               />
               <textarea
                 placeholder='Message'
                 rows='6'
-                class='w-full rounded-md px-4 bg-gray-100 text-gray-800 text-sm pt-3 outline-blue-500 focus:bg-transparent'></textarea>
+                class='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'></textarea>
               <button
                 type='button'
                 class='text-white bg-[#2c7a7b] hover:bg-[#319795] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'>
@@ -215,23 +239,6 @@ export default async function HomePage() {
           </div>
         </div>
       </Transition>
-
-      {/* <div className='bg-white border rounded shadow hover:shadow-xl w-80 sm:w-full'>
-        <Link
-          href={`/projects/${project.slug}`}
-          className='flex flex-col md:flex-row'>
-          <img
-            src={project.image}
-            alt='ceritadesain'
-            width='320'
-            height='180'
-            className='rounded-t sm:rounded-l sm:rounded-t-none'
-          />
-          <h2 className='py-1 font-semibold text-center font-plusJakartaSans sm:px-2'>
-            {project.title}
-          </h2>
-        </Link>
-      </div> */}
     </>
   );
 }
