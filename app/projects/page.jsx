@@ -16,27 +16,34 @@ export default async function ProjectsPage() {
     <>
       <Transition>
         <div className='px-32'>
-          <div className='mb-2'>
+          <div className='mb-5'>
             <h2 className='text-lg font-bold underline font-plusJakartaSans decoration-4 underline-offset-4'>
               Projects
             </h2>
+            <p className='text-sm font-light'>
+              Explore my latest projects, where creativity meets functionality.
+              Each project reflects my dedication to quality and my passion for
+              bringing ideas to life.
+            </p>
           </div>
-          <ul className='grid grid-cols-2 gap-4 justify-items-stretch'>
-            {projects.map((project) => (
-              <li key={project.slug}>
-                <Link href={`/projects/${project.slug}`}>
-                  <img
-                    src={project.image}
-                    alt='ceritadesain'
-                    className='object-cover w-full h-auto mb-2 rounded-xl '
-                  />
-                  <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                    {project.title}
-                  </h2>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <ul className='grid grid-cols-2 gap-4 justify-items-stretch'>
+              {projects.map((project) => (
+                <li key={project.slug}>
+                  <Link href={`/projects/${project.slug}`}>
+                    <img
+                      src={project.image}
+                      alt='ceritadesain'
+                      className='object-cover mx-auto mb-2 w-52 h-28 rounded-xl '
+                    />
+                    <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
+                      {project.title}
+                    </h2>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </Transition>
     </>

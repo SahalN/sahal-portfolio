@@ -6,6 +6,7 @@ import DownloadButton from "../components/DownloadButton";
 import Transition from "../components/Transition";
 import ThreeScene from "../components/ThreeScene";
 import Heading from "../components/Heading";
+import ContactForm from "../components/ContactForm";
 
 export const metadata = {
   title: "Sahal Nurdin - HomePage",
@@ -178,8 +179,8 @@ export default async function HomePage() {
       </Transition>
 
       <Transition>
-        <div className='px-32 mb-3'>
-          <h2 className='mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
+        <div className='px-32 mt-5 '>
+          <h2 className='mb-5 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
             My Recent Project
           </h2>
         </div>
@@ -202,40 +203,20 @@ export default async function HomePage() {
       </Transition>
 
       <Transition>
-        <div className='flex px-32 mt-5 md:flex-col'>
+        <div className='flex px-32 mt-4 md:flex-col'>
           <div>
             <h2 className='mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
-              Contact
+              Get in Touch
             </h2>
+            <p className='text-sm font-light'>
+              I’d love to hear from you! Whether you have a question, a project
+              idea, or just want to connect, drop me a message, and I’ll get
+              back to you soon.
+            </p>
           </div>
 
-          <div class='gap-16 p-4 mx-auto max-w-4xl    font-[sans-serif] rounded-xl'>
-            <form class='ml-auto space-y-4'>
-              <input
-                type='text'
-                placeholder='Name'
-                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b] '
-              />
-              <input
-                type='email'
-                placeholder='Email'
-                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b] '
-              />
-              <input
-                type='text'
-                placeholder='Subject'
-                className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
-              />
-              <textarea
-                placeholder='Message'
-                rows='6'
-                class='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'></textarea>
-              <button
-                type='button'
-                class='text-white bg-[#2c7a7b] hover:bg-[#319795] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'>
-                Send
-              </button>
-            </form>
+          <div class='gap-16  mx-auto max-w-4xl '>
+            <ContactForm />
           </div>
         </div>
       </Transition>

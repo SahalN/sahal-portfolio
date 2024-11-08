@@ -30,14 +30,7 @@ export default function NavBar() {
             Projects
           </Link>
         </li>
-        <li>
-          <Link
-            href='/render'
-            prefetch={false}
-            className='text-base font-normal hover:underline'>
-            Renders
-          </Link>
-        </li>
+
         <li>
           <Link
             href='/blog'
