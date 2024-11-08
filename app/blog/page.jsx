@@ -17,7 +17,7 @@ export default function Blog() {
               <Heading>My Blogs</Heading>
             </div>
             <div className='mb-5'>
-              <p className='text-sm font-light text-justify '>
+              <p className='text-sm font-light text-justify indent-4'>
                 This page is dedicated to my personal blog, where I discuss
                 various topics related to programming, UI/UX design, and my
                 learning experiences during university. Explore detailed posts,
@@ -38,7 +38,7 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's Programming Blog on Medium
                 </h2>
-                <p className='text-sm font-light text-center'>
+                <p className='text-sm font-light text-justify indent-4'>
                   A blog on Medium that shares insights and tutorials on
                   programming, offering valuable content to help readers
                   understand coding concepts and enhance their skills.
@@ -57,7 +57,7 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's University Journey Blog
                 </h2>
-                <p className='text-sm font-light text-center'>
+                <p className='text-sm font-light text-justify indent-4 '>
                   A blog on Blogger that chronicles activities and learning
                   experiences during university, offering insights into the
                   academic journey and personal growth throughout the college
@@ -75,7 +75,7 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's Instagram Coding Blog
                 </h2>
-                <p className='text-sm font-light text-center'>
+                <p className='text-sm font-light text-justify indent-4'>
                   An Instagram account dedicated to sharing web programming
                   tutorials, offering practical guides and tips to help
                   followers enhance their coding skills.
@@ -89,10 +89,10 @@ export default function Blog() {
                   alt='sahal-uiux-image'
                   className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
                 />
-                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                  Sahal's UI/UX Blog Reviews
+                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white '>
+                  Sahal's UI and UX Blog Reviews
                 </h2>
-                <p className='text-sm font-light text-center'>
+                <p className='text-sm font-light text-justify indent-4'>
                   Sahalnuiux is a website dedicated to sharing insights on how
                   UI/UX designs are created, offering a detailed look into
                   design techniques, processes, and workflows.

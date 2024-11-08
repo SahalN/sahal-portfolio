@@ -5,6 +5,7 @@
 import Link from "next/link";
 import { getProjects } from "../../lib/projects";
 import Transition from "../../components/Transition";
+import Heading from "../../components/Heading";
 
 export const metadata = {
   title: "Projects",
@@ -17,10 +18,8 @@ export default async function ProjectsPage() {
       <Transition>
         <div className='px-32'>
           <div className='mb-5'>
-            <h2 className='text-lg font-bold underline font-plusJakartaSans decoration-4 underline-offset-4'>
-              Projects
-            </h2>
-            <p className='text-sm font-light'>
+            <Heading>Projects</Heading>
+            <p className='text-sm font-light indent-4'>
               Explore my latest projects, where creativity meets functionality.
               Each project reflects my dedication to quality and my passion for
               bringing ideas to life.
