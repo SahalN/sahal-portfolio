@@ -16,7 +16,7 @@ export default function ShareLinkButton() {
   return (
     <button
       onClick={handleClick}
-      className='flex items-center px-2 py-1 text-sm border rounded hover:bg-gray-100 text-slate-500 dark:text-slate-500 hover:text-slate-700'>
+      className='flex items-center px-2 py-1 text-sm border rounded hover:bg-gray-100 text-slate-500 dark:text-white dark:hover:text-slate-500 hover:text-slate-700'>
       <LinkIcon className='w-4 h-4 ' />
       {clicked ? "Link Copied" : "Share Link"}
     </button>

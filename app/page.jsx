@@ -215,7 +215,7 @@ export default async function HomePage() {
             <img
               src={project.image}
               alt='ceritadesain'
-              className='w-full h-auto rounded-xl'
+              className='object-cover w-full h-auto rounded-xl'
             />
 
             <h2 className='py-1 font-normal text-center font-plusJakartaSans sm:px-2'>

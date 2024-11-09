@@ -1,7 +1,7 @@
 ---
 title: "HealMe"
-date: "2023-10-27"
-image: "/images/cerita-desain.png"
+date: "2024-05-04"
+image: "/images/Healme.png"
 ---
 
 <!-- @format -->
@@ -9,22 +9,46 @@ image: "/images/cerita-desain.png"
 **Organization repository:** [HealMe on GitHub](https://github.com/healme-app)  
 **HealMe - Your Path to Faster, Smarter Wound Healing**
 
-## What is HealMe?
+### Project Name
 
-HealMe is an innovative application designed to detect wounds and recommend appropriate healing treatments. It aims to provide both immediate and ongoing support for individuals in managing their wounds effectively. By leveraging advanced technology, HealMe ensures that users receive accurate diagnostics and tailored healing advice to promote quicker recovery and overall well-being.
+HealMe
 
-With HealMe, users can easily track the progress of their wounds, receive reminders for treatment schedules, and access a wealth of information on wound care. This application is particularly beneficial for those who need consistent wound management, ensuring that no step in the healing process is overlooked.
+### Short Description
 
-## Key Benefits of Using HealMe
+HealMe is a skin disease detection application that leverages AI to analyze images of skin conditions and provide users with accurate insights and recommendations for further medical consultation.
 
-- **Accurate Diagnostics:** HealMe uses advanced algorithms to provide precise wound detection and analysis.
-- **Tailored Recommendations:** Receive personalized treatment plans and healing advice based on the specific type of wound.
-- **User-friendly Interface:** Designed to be intuitive and easy to navigate, even for those with limited technical experience.
-- **Progress Tracking:** Monitor the healing process with detailed progress reports and reminders.
-- **Resource Access:** Access comprehensive information on wound care and management, enhancing overall user knowledge.
+### Purpose and Background
 
-> HealMe empowers users to take control of their wound care journey, ensuring they have the tools needed for efficient and effective recovery.
+HealMe was created to help individuals identify and understand potential skin conditions through the power of AI. The app aims to provide users with an accessible, fast, and reliable tool to detect skin diseases at an early stage, promoting better healthcare outcomes by encouraging timely medical consultation.
 
----
+### Technologies Used
 
-With HealMe, wound management is simplified and streamlined, making consistent care accessible to everyone.
+- **Backend:** Python with Flask for building the API and managing server-side logic.
+- **Frontend:** React Native for a mobile-responsive and interactive user interface.
+- **AI/ML Model:** TensorFlow for building the image classification model to detect skin diseases.
+- **Database:** Firebase for real-time database management and user data storage.
+- **Authentication:** Firebase Authentication for secure user login and profile management.
+- **Version Control:** Git for managing code and collaboration.
+
+### Key Features
+
+- **Skin Condition Detection:** Users can upload images of their skin and get insights on potential skin conditions using an AI-powered image classification model.
+- **Recommendations and Advice:** Based on the analysis, the app provides recommendations for medical consultation or home care.
+- **User Profiles:** Allows users to create accounts and keep track of their skin condition history.
+- **Real-time Results:** Provides instant feedback and suggestions after analyzing skin images.
+
+### Challenges and Solutions
+
+A significant challenge was developing an accurate AI model to correctly classify skin conditions from images. This was addressed by training the model with a large dataset of labeled skin disease images, ensuring better accuracy. Additionally, implementing real-time image processing for fast feedback was optimized to enhance the user experience.
+
+### Roles and Responsibilities
+
+As the lead developer, I was responsible for designing and implementing the backend API, training the AI model, developing the mobile app, and integrating the entire system to deliver a seamless user experience.
+
+### Outcomes and Impact
+
+The application has been successfully deployed and tested, providing users with a convenient method for detecting potential skin conditions. Early feedback from users has been positive, particularly regarding the ease of use and the value of early detection for skin health.
+
+### Future Development
+
+Plans for future development include expanding the dataset to improve the accuracy of the AI model, adding a feature for tracking skin health over time, and integrating telemedicine functionalities to allow users to consult with doctors directly through the app.
