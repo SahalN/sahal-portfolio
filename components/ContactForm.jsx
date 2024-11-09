@@ -29,13 +29,13 @@ export default function ContactForm() {
   };
 
   return (
-    <div className='max-w-4xl gap-16 p-4 mx-auto'>
+    <div className='max-w-4xl gap-16 mx-auto'>
       <form className='ml-auto space-y-4' onSubmit={(e) => e.preventDefault()}>
         <input
           type='text'
           name='name'
           placeholder='Your Name'
-          className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
+          className=' dark:placeholder:text-white w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
           value={formData.name}
           onChange={handleChange}
         />
@@ -43,7 +43,7 @@ export default function ContactForm() {
           type='email'
           name='email'
           placeholder='Your Email'
-          className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
+          className='dark:placeholder:text-white w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
           value={formData.email}
           onChange={handleChange}
         />
@@ -51,7 +51,7 @@ export default function ContactForm() {
           type='text'
           name='subject'
           placeholder='Subject'
-          className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
+          className='w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 dark:placeholder:text-white text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
           value={formData.subject}
           onChange={handleChange}
         />
@@ -59,12 +59,12 @@ export default function ContactForm() {
           name='message'
           placeholder='Your Message'
           rows='6'
-          className='w-full rounded-md py-3 px-4 bg-[#f5eee6] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#2c7a7b]'
+          className='w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886] dark:placeholder:text-white'
           value={formData.message}
           onChange={handleChange}></textarea>
         <button
           type='button'
-          className='text-white bg-[#2c7a7b] hover:bg-[#319795] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'
+          className='dark:placeholder:text-white text-white bg-[#6D9886] hover:bg-[#a7c1b6] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'
           onClick={handleSubmit}>
           Send Message
         </button>

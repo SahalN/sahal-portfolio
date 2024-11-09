@@ -13,29 +13,37 @@ const ThreeScene = () => {
   useEffect(() => {
     // Scene setup
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(90, 1, 0.1, 1000); // Aspect ratio is 1 for a square canvas
+    const camera = new THREE.PerspectiveCamera(90, 1, 0.1, 1000); // Aspect ratio will be updated later
     const renderer = new THREE.WebGLRenderer({ alpha: true });
 
-    const size = 640; // Set both width and height to 640px for a square canvas
+    // Function to set dynamic size based on viewport
+    const setSize = () => {
+      const containerWidth = mountRef.current.clientWidth;
+      const containerHeight = containerWidth; // Set to square based on width for a responsive square canvas
 
-    renderer.setSize(size, size); // Set renderer size to 640x640
-    renderer.domElement.style.width = `${size}px`; // CSS width
-    renderer.domElement.style.height = `${size}px`; // CSS height
-    renderer.domElement.style.display = "block"; // Display block as per your example
-    renderer.domElement.style.touchAction = "none"; // Disable touch actions if needed
+      // Update renderer and camera settings
+      renderer.setSize(containerWidth, containerHeight);
+      renderer.domElement.style.width = `${containerWidth}px`;
+      renderer.domElement.style.height = `${containerHeight}px`;
 
+      // Update camera aspect ratio and projection matrix
+      camera.aspect = containerWidth / containerHeight;
+      camera.updateProjectionMatrix();
+    };
+
+    // Append renderer to DOM
     mountRef.current.appendChild(renderer.domElement);
-
-    let model; // Declare model here so it can be accessed in animate
+    setSize(); // Set initial size
 
     // Load the 3D model using GLTFLoader
     const loader = new GLTFLoader();
+    let model; // Declare model here so it can be accessed in animate
+
     loader.load(
-      "/gun.glb", // Corrected path to the .glb file
+      "/gun.glb", // Path to the .glb file
       (gltf) => {
-        model = gltf.scene; // Assign to the outer-scope variable
+        model = gltf.scene;
         model.scale.set(0.5, 0.5, 0.5);
-        // model.position.set(0, 0, 0);
         scene.add(model);
       },
       undefined,
@@ -44,14 +52,14 @@ const ThreeScene = () => {
       }
     );
 
-    camera.position.x = 2; // Set camera position
+    camera.position.x = 2; // Set initial camera position
 
-    // Add lights to the scene
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white ambient light
+    // Add lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Bright directional light
-    directionalLight.position.set(2, 2, 5); // Position it slightly to the side and above
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(2, 2, 5);
     scene.add(directionalLight);
 
     // Add OrbitControls for interaction
@@ -64,26 +72,25 @@ const ThreeScene = () => {
     const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
-      if (model) {
-        // model.rotation.x -= 0.01; // Rotate the model if it's loaded
-        model.rotation.y += 0.01;
-      }
+      if (model) model.rotation.y += 0.01;
       renderer.render(scene, camera);
     };
 
     animate();
 
+    // Handle window resize for responsive design
+    window.addEventListener("resize", setSize);
+
     // Cleanup on unmount
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
-      }
+      if (mountRef.current) mountRef.current.removeChild(renderer.domElement);
       renderer.dispose();
+      window.removeEventListener("resize", setSize);
     };
   }, []);
 
-  // Set the div container for the canvas with the desired width and height
-  return <div ref={mountRef} style={{ width: "640px", height: "640px" }} />;
+  // Return div container for the Three.js canvas, which adapts to screen width
+  return <div ref={mountRef} className='w-full md:w-[640px] h-auto' />;
 };
 
 export default ThreeScene;

@@ -27,7 +27,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className='flex items-center p-2 bg-gray-200 rounded dark:bg-gray-700'>
+      className='flex items-center p-2 bg-gray-100 rounded dark:bg-[#6D9886] '>
       {theme === "dark" ? (
         <svg
           xmlns='http://www.w3.org/2000/svg'

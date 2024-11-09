@@ -11,7 +11,7 @@ export default function Blog() {
   return (
     <>
       <Transition>
-        <div className='px-32'>
+        <div>
           <div className='mb-2'>
             <div>
               <Heading>My Blogs</Heading>
@@ -38,11 +38,6 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's Programming Blog on Medium
                 </h2>
-                <p className='text-sm font-light text-justify indent-4'>
-                  A blog on Medium that shares insights and tutorials on
-                  programming, offering valuable content to help readers
-                  understand coding concepts and enhance their skills.
-                </p>
               </a>
             </div>
             <div>
@@ -57,12 +52,6 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's University Journey Blog
                 </h2>
-                <p className='text-sm font-light text-justify indent-4 '>
-                  A blog on Blogger that chronicles activities and learning
-                  experiences during university, offering insights into the
-                  academic journey and personal growth throughout the college
-                  years.
-                </p>
               </a>
             </div>
             <div>
@@ -75,11 +64,6 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's Instagram Coding Blog
                 </h2>
-                <p className='text-sm font-light text-justify indent-4'>
-                  An Instagram account dedicated to sharing web programming
-                  tutorials, offering practical guides and tips to help
-                  followers enhance their coding skills.
-                </p>
               </a>
             </div>
             <div>
@@ -92,11 +76,6 @@ export default function Blog() {
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white '>
                   Sahal's UI and UX Blog Reviews
                 </h2>
-                <p className='text-sm font-light text-justify indent-4'>
-                  Sahalnuiux is a website dedicated to sharing insights on how
-                  UI/UX designs are created, offering a detailed look into
-                  design techniques, processes, and workflows.
-                </p>
               </a>
             </div>
           </div>
