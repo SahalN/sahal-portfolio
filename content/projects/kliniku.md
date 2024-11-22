@@ -1,6 +1,6 @@
 ---
 title: "Kliniku"
-date: "2023-04-26"
+date: "2023-01-25"
 image: "/images/kliniku-landing-page.png"
 ---
 

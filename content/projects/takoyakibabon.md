@@ -1,6 +1,6 @@
 ---
 title: "Takoyaki Babon"
-date: "2024-09-11"
+date: "2024-10-19"
 image: "/images/takoyaki-babon.png"
 tag: "Slicing"
 ---

@@ -1,8 +1,7 @@
 ---
 title: "Cerita Desain"
-date: "2024-09-11"
+date: "2024-09-16"
 image: "/images/cerita-desain.png"
-tag: "Slicing"
 ---
 
 <!-- @format -->
