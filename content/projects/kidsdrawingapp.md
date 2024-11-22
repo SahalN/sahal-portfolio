@@ -1,6 +1,6 @@
 ---
-title: "My Quiz App"
-date: "2023-09-21"
+title: "Kids Drawing App"
+date: "2023-10-07"
 image: "/images/cerita-desain.png"
 ---
 
