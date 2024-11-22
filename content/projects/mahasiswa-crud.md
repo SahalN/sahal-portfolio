@@ -1,6 +1,6 @@
 ---
 title: "Mahasiswa CRUD"
-date: "2022-04-19"
+date: "2024-09-26"
 image: "/images/cerita-desain.png"
 ---
 
