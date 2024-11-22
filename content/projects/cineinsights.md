@@ -1,5 +1,5 @@
 ---
-title: "BahasIn"
+title: "Cineinsights"
 date: "2024-02-05"
 image: "/images/cerita-desain.png"
 ---
