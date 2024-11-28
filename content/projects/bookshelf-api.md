@@ -1,7 +1,7 @@
 ---
 title: "Book Shelf API deployed using GCP"
 date: "2024-06-06"
-image: "/images/cerita-desain.png"
+image: "/images/bookshelf-api.svg"
 ---
 
 <!-- @format -->

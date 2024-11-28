@@ -1,7 +1,7 @@
 ---
 title: "Kids Drawing App"
 date: "2023-10-07"
-image: "/images/cerita-desain.png"
+image: "/images/kidsdrawingapp.svg"
 ---
 
 <!-- @format -->

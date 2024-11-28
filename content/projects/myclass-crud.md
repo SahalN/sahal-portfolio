@@ -1,7 +1,7 @@
 ---
 title: "My Class CRUD"
 date: "2024-01-09"
-image: "/images/cerita-desain.png"
+image: "/images/myclasscrud.svg"
 ---
 
 <!-- @format -->

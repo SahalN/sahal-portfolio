@@ -29,8 +29,8 @@ export default async function HomePage() {
               <div>
                 <Heading>Muhammad Sahal Nurdin</Heading>
                 <p className='text-sm font-light text-left'>
-                  Love to build Digital Things (Developer/3D
-                  Generalist/Designer)
+                  Love to build Digital Things (Developer/3D Generalist/UI
+                  Designer)
                 </p>
               </div>
               <div>
@@ -82,12 +82,12 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-          <div>
+          {/* <div>
             <div className='flex mt-2 space-x-2'>
               <span className='my-auto font-bold'>2024</span>
               <div>Working as a freelancer developer</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </Transition>
 
@@ -99,14 +99,14 @@ export default async function HomePage() {
             </h2>
 
             <p className='font-normal text-justify indent-4'>
-              UI/UX Design, drawing,{" "}
+              UI/UX design, drawing,{" "}
               <a
                 className='text-[#6d9886]'
                 href='https://www.artstation.com/sahalnurdin'
                 target='_blank'>
-                3D Environment Design
+                3D environment design
               </a>
-              , Listening to music, and Reading Books.
+              , listening to music, and reading books.
             </p>
           </div>
           <div className='mt-5 '>

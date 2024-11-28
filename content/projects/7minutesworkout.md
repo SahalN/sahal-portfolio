@@ -1,7 +1,7 @@
 ---
 title: "7 Minutes Workout"
 date: "2024-09-16"
-image: "/images/cerita-desain.png"
+image: "/images/7minworkout.svg"
 ---
 
 <!-- @format -->

@@ -1,7 +1,7 @@
 ---
 title: "Tincat Slicing Landing Page"
 date: "2022-04-14"
-image: "/images/cerita-desain.png"
+image: "/images/tincat.svg"
 ---
 
 <!-- @format -->

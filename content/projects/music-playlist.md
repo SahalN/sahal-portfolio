@@ -1,7 +1,7 @@
 ---
 title: "Music Playlist Slicing"
 date: "2022-04-19"
-image: "/images/cerita-desain.png"
+image: "/images/m-w.svg"
 ---
 
 <!-- @format -->

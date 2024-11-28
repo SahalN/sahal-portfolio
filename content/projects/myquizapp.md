@@ -1,7 +1,7 @@
 ---
 title: "My Quiz App"
 date: "2023-09-21"
-image: "/images/cerita-desain.png"
+image: "/images/myquizapp.svg"
 ---
 
 <!-- @format -->
