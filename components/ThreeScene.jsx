@@ -40,7 +40,7 @@ const ThreeScene = () => {
     let model; // Declare model here so it can be accessed in animate
 
     loader.load(
-      "/gun.glb", // Path to the .glb file
+      "/moon.glb", // Path to the .glb file
       (gltf) => {
         model = gltf.scene;
         model.scale.set(0.5, 0.5, 0.5);
