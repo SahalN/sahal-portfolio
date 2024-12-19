@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getFeaturedProject } from "../lib/projects";
 import DownloadButton from "../components/DownloadButton";
 import Transition from "../components/Transition";
-import ThreeScene from "../components/ThreeScene";
 import Heading from "../components/Heading";
 import ContactForm from "../components/ContactForm";
 
