@@ -13,19 +13,16 @@ export default function Transition({ children }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // If the element is intersecting, set visibility to true
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.1, // Adjust threshold as needed
+        threshold: 0.1,
       }
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
-
-    // Clean up the observer on unmount
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
@@ -37,7 +34,7 @@ export default function Transition({ children }) {
     <motion.div
       ref={ref}
       initial={{ y: 20, opacity: 0 }}
-      animate={isVisible ? { y: 0, opacity: 1 } : {}} // Only animate when visible
+      animate={isVisible ? { y: 0, opacity: 1 } : {}}
       transition={{ ease: "easeInOut", duration: 0.75 }}>
       {children}
     </motion.div>
