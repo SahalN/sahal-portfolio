@@ -3,14 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Default font weight */
-body {
-  font-weight: normal;
-}
-
-/* Dark mode override */
-.dark strong,
-.dark b {
-  font-weight: 400; /* or choose a lighter weight */
-}
