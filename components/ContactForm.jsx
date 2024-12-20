@@ -1,6 +1,7 @@
 /** @format */
 "use client";
 import { useState } from "react";
+import { IoSend } from "react-icons/io5";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -66,7 +67,12 @@ export default function ContactForm() {
           type='button'
           className='dark:placeholder:text-white text-white bg-[#6D9886] hover:bg-[#a7c1b6] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'
           onClick={handleSubmit}>
-          Send Message
+          <div className='flex flex-row items-center justify-center gap-2'>
+            <div>Send Message</div>
+            <div>
+              <IoSend />
+            </div>
+          </div>
         </button>
       </form>
     </div>
