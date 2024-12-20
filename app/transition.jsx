@@ -10,34 +10,30 @@ export default function Transition({ children }) {
   const ref = useRef(null);
 
   useEffect(() => {
+    if (!ref.current) return;
+
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true); // Set visible only when in view
-            observer.unobserve(entry.target); // Stop observing after it becomes visible
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
       },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
+      { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(ref.current);
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current); // Cleanup observer
-      }
+      observer.disconnect();
     };
   }, []);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ y: 20, opacity: 0 }} // Initial state
-      animate={isVisible ? { y: 0, opacity: 1 } : {}} // Animate only if visible
+      initial={{ y: 20, opacity: 0 }}
+      animate={isVisible ? { y: 0, opacity: 1 } : {}}
       transition={{ ease: "easeInOut", duration: 0.75 }}>
       {children}
     </motion.div>
