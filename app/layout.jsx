@@ -43,10 +43,6 @@ export default function RootLayout({ children }) {
         <meta name='twitter:title' content={metadata.title.default} />
         <meta name='twitter:description' content={metadata.description} />
         <meta name='twitter:image' content={metadata.ogImage} />
-        <meta
-          name='google-site-verification'
-          content='So-1ix6ivPbmDjDu61ax-FNuTQvh2kTm_dgj4JeCw00'
-        />
 
         {/* Canonical URL */}
         <link rel='canonical' href={metadata.url} />
