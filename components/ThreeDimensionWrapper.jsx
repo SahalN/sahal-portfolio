@@ -11,31 +11,26 @@ const ThreeDimension = dynamic(() => import("./ThreeDimension"), {
 });
 
 export default function ThreeDimensionWrapper() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [shouldRender3D, setShouldRender3D] = useState(null);
 
   useEffect(() => {
-    setMounted(true);
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
+    // Check sekali saja saat mount
+    const isMobile = window.innerWidth < 768;
+    setShouldRender3D(!isMobile);
   }, []);
 
-  if (!mounted) {
+  // Loading state
+  if (shouldRender3D === null) {
     return <div className="w-full h-[300px] md:h-[640px] bg-gradient-to-b from-blue-50 to-transparent dark:from-gray-800"></div>;
   }
 
-  // Jangan render 3D di mobile untuk performa
-  if (isMobile) {
+  // Mobile: render placeholder
+  if (!shouldRender3D) {
     return (
       <div className="w-full h-[300px] bg-gradient-to-b from-blue-50 to-transparent dark:from-gray-800"></div>
     );
   }
 
+  // Desktop: render 3D
   return <ThreeDimension/>
 }
