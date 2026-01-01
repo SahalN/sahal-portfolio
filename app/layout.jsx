@@ -33,6 +33,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={`${inter.variable} ${plusJakartaSans.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      </head>
       <body className='flex flex-col bg-[#F6F6F6] dark:bg-[#212121] text-black dark:text-white'>
         <header>
           <NavBar />

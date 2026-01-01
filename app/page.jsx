@@ -166,11 +166,12 @@ export default async function HomePage() {
           <Link href={`/projects/${project.slug}`}>
             <Image
               src={project.image}
-              alt='ceritadesain'
-              width={208}
-              height={112}
+              alt={project.title}
+              width={800}
+              height={450}
               className='object-cover w-full h-auto rounded-xl'
               sizes="(max-width: 768px) 100vw, 800px"
+              priority
             />
             <h2 className='py-1 font-normal text-center font-plusJakartaSans sm:px-2'>
               {project.title}

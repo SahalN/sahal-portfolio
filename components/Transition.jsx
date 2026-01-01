@@ -27,16 +27,20 @@ export default function Transition({ children }) {
       }
     };
   }, []);
+
   return (
     <motion.div
       ref={ref}
       initial={{ y: 20, opacity: 0 }}
       animate={isVisible ? { y: 0, opacity: 1 } : {}}
-      transition={{ ease: "easeInOut", duration: 0.75 }}>
+      transition={{ ease: "easeInOut", duration: 0.5 }}
+      style={{ willChange: isVisible ? 'auto' : 'transform, opacity' }}
+    >
       {children}
     </motion.div>
   );
 }
+
 Transition.propTypes = {
   children: PropTypes.node.isRequired,
 };
