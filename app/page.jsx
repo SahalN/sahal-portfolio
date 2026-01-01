@@ -1,5 +1,3 @@
-/** @format */
-
 import Link from "next/link";
 import { getFeaturedProject } from "../lib/projects";
 import DownloadButton from "../components/DownloadButton";
@@ -10,6 +8,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
+import Image from "next/image";
 
 export const metadata = {
   title: "Sahal Nurdin - HomePage",
@@ -17,7 +16,6 @@ export const metadata = {
 
 export default async function HomePage() {
   const project = await getFeaturedProject();
-  // console.log("[HomePage]");
   return (
     <>
       <Transition>
@@ -37,14 +35,16 @@ export default async function HomePage() {
                 </p>
               </div>
               <div>
-                <img
+                <Image
                   src='/images/sahaln.png'
                   alt='foto-sahal'
-                  className='w-24 border-2 border-white rounded-full '
+                  width={96}
+                  height={96}
+                  className='w-24 border-2 border-white rounded-full'
+                  priority
                 />
               </div>
             </div>
-
             <div className='mt-3'>
               <h2 className='text-lg font-bold underline font-plusJakartaSans decoration-4 '>
                 About
@@ -63,8 +63,6 @@ export default async function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* BIO */}
         <div>
           <div className='flex justify-center mt-5'>
             <DownloadButton />
@@ -85,12 +83,6 @@ export default async function HomePage() {
               </div>
             </div>
           </div>
-          {/* <div>
-            <div className='flex mt-2 space-x-2'>
-              <span className='my-auto font-bold'>2024</span>
-              <div>Working as a freelancer developer</div>
-            </div>
-          </div> */}
         </div>
       </Transition>
 
@@ -100,7 +92,6 @@ export default async function HomePage() {
             <h2 className='mt-5 mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4 '>
               Hobby
             </h2>
-
             <p className='font-normal text-justify indent-4'>
               UI/UX design, drawing,{" "}
               <a
@@ -165,29 +156,28 @@ export default async function HomePage() {
           </div>
         </div>
       </Transition>
-
       <Transition>
         <div className='mt-5 '>
           <h2 className='mb-5 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
             My Recent Project
           </h2>
         </div>
-
         <div className='flex justify-center rounded'>
           <Link href={`/projects/${project.slug}`}>
-            <img
+            <Image
               src={project.image}
               alt='ceritadesain'
+              width={208}
+              height={112}
               className='object-cover w-full h-auto rounded-xl'
+              sizes="(max-width: 768px) 100vw, 800px"
             />
-
             <h2 className='py-1 font-normal text-center font-plusJakartaSans sm:px-2'>
               {project.title}
             </h2>
           </Link>
         </div>
       </Transition>
-
       <Transition>
         <div className='flex flex-col mt-4'>
           <div>
@@ -200,8 +190,7 @@ export default async function HomePage() {
               back to you soon.
             </p>
           </div>
-
-          <div class='gap-16  mx-auto max-w-4xl '>
+          <div className='max-w-4xl gap-16 mx-auto '>
             <ContactForm />
           </div>
         </div>

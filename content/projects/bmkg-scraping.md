@@ -4,8 +4,6 @@ date: "2022-04-19"
 image: "/images/bmkg.svg"
 ---
 
-<!-- @format -->
-
 ### Project Name
 
 SHL Indonesia Earthquake's Report
@@ -39,20 +37,8 @@ This project addresses the need for quick and straightforward access to earthqua
 - **Challenge:** Handling frequent data requests without overwhelming the server.  
   **Solution:** Implemented rate-limiting and caching mechanisms to reduce redundant requests.
 
-### Roles and Responsibilities
-
-- **Project Developer:** Muhammad Sahal Nurdin  
-  Responsible for designing, coding, and testing the scraper, as well as ensuring the accuracy and reliability of the data extraction process.
-
 ### Outcomes and Impact
 
 - Streamlined access to BMKG earthquake data for terminal users.
 - Increased efficiency in monitoring seismic activities without relying on a web browser.
 - Enhanced usability for developers and researchers working in data analysis or disaster response.
-
-### Future Development
-
-- Adding more detailed filters, such as time range and magnitude thresholds.
-- Enhancing output formats with options for JSON and XML.
-- Integrating geospatial visualizations directly into the terminal using libraries like `matplotlib`.
-- Expanding functionality to include other disaster-related data from BMKG.

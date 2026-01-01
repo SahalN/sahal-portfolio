@@ -1,5 +1,5 @@
-/** @format */
 "use client";
+
 import { useEffect, useState } from "react";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";

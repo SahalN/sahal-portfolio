@@ -1,11 +1,8 @@
-/** @format */
-
-// pages/projects.js
-
 import Link from "next/link";
 import { getProjects } from "../../lib/projects";
 import Transition from "../../components/Transition";
 import Heading from "../../components/Heading";
+import Image from "next/image";
 
 export const metadata = {
   title: "Projects",
@@ -30,7 +27,7 @@ export default async function ProjectsPage() {
               {projects.map((project) => (
                 <li key={project.slug}>
                   <Link href={`/projects/${project.slug}`}>
-                    <img
+                    <Image
                       src={project.image}
                       alt='ceritadesain'
                       className='object-cover mx-auto mb-2 w-52 h-28 rounded-xl '

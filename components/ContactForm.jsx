@@ -1,4 +1,3 @@
-/** @format */
 "use client";
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";

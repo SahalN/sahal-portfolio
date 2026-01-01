@@ -4,11 +4,9 @@ date: "2022-04-19"
 image: "/images/m-w.svg"
 ---
 
-<!-- @format -->
-
 ### Project Name
 
-Sahal Musics Website
+Sahal's Music Website
 
 ### Short Description
 
@@ -40,11 +38,6 @@ This project was developed to practice and enhance front-end slicing skills by t
 
 - **Challenge:** Balancing visual appeal with minimal code complexity.  
   **Solution:** Leveraged CSS features like Flexbox and Grid for clean and efficient layouts without bloating the code.
-
-### Roles and Responsibilities
-
-- **Developer:** Muhammad Sahal Nurdin  
-  Responsible for slicing the design mockup into a functional, responsive webpage, ensuring it adheres to modern web standards.
 
 ### Outcomes and Impact
 

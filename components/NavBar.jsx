@@ -1,10 +1,10 @@
-/** @format */
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,19 +16,18 @@ export default function NavBar() {
   return (
     <nav className='fixed top-0 left-0 right-0 z-50 px-6 md:px-64 lg:px-[500px] backdrop-filter backdrop-blur-lg bg-opacity-40 py-2'>
       <div className='flex items-center justify-between md:px-0'>
-        {/* Logo */}
         <Link
           href='/'
           className='flex items-center gap-2 text-xl font-bold hover:underline font-plusJakartaSans'>
-          <img
-            src='images/glosrg.jpg'
+          <Image
+            src='/images/glosrg.jpg'
+            width={800}
+            height={600}
             alt='sahal-logo'
             className='w-6 rounded-full'
           />
           <span className='text-sm'>Sahal Nurdin</span>
         </Link>
-
-        {/* Desktop Menu */}
         <div className='items-center hidden gap-2 md:flex'>
           <Link
             href='/projects'
@@ -50,8 +49,6 @@ export default function NavBar() {
           </a>
           <ThemeToggle />
         </div>
-
-        {/* Toggle Button - only visible on mobile */}
         <button
           onClick={toggleMenu}
           type='button'
@@ -75,8 +72,6 @@ export default function NavBar() {
           </svg>
         </button>
       </div>
-
-      {/* Mobile Menu */}
       <div
         className={`${isMenuOpen ? "block" : "hidden"} w-full md:hidden`}
         id='navbar-hamburger'>

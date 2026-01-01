@@ -5,8 +5,6 @@ image: "/images/takoyaki-babon.png"
 tag: "Slicing"
 ---
 
-<!-- @format -->
-
 ### Project Name
 
 TakoyakiBabon
@@ -21,16 +19,15 @@ TakoyakiBabon was developed to cater to the growing demand for quick, convenient
 
 ### Technologies Used
 
-- **Backend:** Node.js with Express for handling server-side logic and APIs.
-- **Frontend:** React.js for building an interactive and responsive user interface.
-- **Database:** MongoDB for managing food menu items, orders, and customer details.
+- **Backend:** Laravel for handling server-side logic and APIs.
+- **Frontend:** Tailwind for building an interactive and responsive user interface.
+- **Database:** MySql for managing food menu items, orders, and customer details.
 - **Payment Gateway:** Integration with a secure payment gateway for online payments.
 - **Version Control:** Git to manage and track code updates.
 
 ### Key Features
 
 - **Menu Ordering:** Customers can view and order takoyaki, kebabs, and other food items, with options for customizing their orders.
-- **Pre-ordering System:** Users can place orders in advance, ensuring timely preparation and delivery.
 - **Real-time Order Tracking:** Customers can track their orders in real-time, from preparation to delivery.
 - **Payment Integration:** Secure payment system for easy and safe online payments.
 
@@ -40,12 +37,8 @@ One of the challenges was ensuring a smooth and secure payment process for users
 
 ### Roles and Responsibilities
 
-As the full-stack developer, I was responsible for designing and implementing both the backend and frontend, configuring the database, integrating payment systems, and ensuring the overall functionality and user experience of the website.
+As the front-end developer, I was responsible for designing and implementing both the backend and frontend, configuring the database, integrating payment systems, and ensuring the overall functionality and user experience of the website.
 
 ### Outcomes and Impact
 
 TakoyakiBabon successfully launched, providing customers with a user-friendly platform to order food online. Feedback from customers has been overwhelmingly positive, especially regarding the ease of use and the speed of the order-to-delivery process.
-
-### Future Development
-
-Future updates include adding features like a loyalty rewards program, a review and rating system for food items, and expanding the menu options to include more street food varieties.

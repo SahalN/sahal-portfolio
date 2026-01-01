@@ -4,8 +4,6 @@ date: "2023-01-25"
 image: "/images/kliniku-landing-page.png"
 ---
 
-<!-- @format -->
-
 **View the repository here:** [Kliniku](https://github.com/SahalN/Production-Kliniku)  
 **Kliniku - Your Health, Just a Click Away**
 
@@ -39,14 +37,7 @@ Kliniku was developed to address the need for an efficient and accessible way to
 
 One of the main challenges was ensuring secure and smooth authentication for both admins and users. This was achieved by implementing JWT for access control and using `bcryptjs` for secure password encryption, which added an extra layer of security to the application.
 
-### Roles and Responsibilities
-
-As the lead developer, I was responsible for designing and implementing both backend and frontend components, setting up the database, coding core functionalities, and ensuring secure data management.
-
 ### Outcomes and Impact
 
 The project was completed within one month and successfully provides users with an efficient scheduling system. Early feedback highlighted the ease of use and accessibility of the platform, with significant improvements in appointment management for healthcare providers.
 
-### Future Development
-
-Future plans include integrating appointment reminders via SMS or email, expanding user profile capabilities, and adding a feedback system for patients to review their appointment experiences.

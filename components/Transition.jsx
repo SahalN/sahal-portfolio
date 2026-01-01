@@ -1,5 +1,3 @@
-/** @format */
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -29,7 +27,6 @@ export default function Transition({ children }) {
       }
     };
   }, []);
-
   return (
     <motion.div
       ref={ref}
@@ -40,7 +37,6 @@ export default function Transition({ children }) {
     </motion.div>
   );
 }
-
 Transition.propTypes = {
   children: PropTypes.node.isRequired,
 };

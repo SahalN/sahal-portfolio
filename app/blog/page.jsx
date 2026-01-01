@@ -1,5 +1,4 @@
-/** @format */
-
+import Image from "next/image";
 import Heading from "../../components/Heading";
 import Transition from "../../components/Transition";
 
@@ -29,12 +28,13 @@ export default function Blog() {
           <div className='grid grid-cols-2 gap-4 justify-items-stretch'>
             <div>
               <a href='https://medium.com/@sahalnurdin' target='_blank'>
-                <img
+                <Image
                   src='/images/sahal-medium.png'
                   alt='sahal-medium-image'
+                   width={208}
+                   height={112}
                   className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
                 />
-
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                   Sahal's Programming Blog on Medium
                 </h2>
@@ -44,9 +44,11 @@ export default function Blog() {
               <a
                 href='https://muhammadsahalnurdin.blogspot.com/'
                 target='_blank'>
-                <img
+                <Image
                   src='/images/sahal-blogger.png'
                   alt='sahal-blogger-image'
+                  width={208}
+                  height={112}
                   className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
                 />
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
@@ -56,9 +58,11 @@ export default function Blog() {
             </div>
             <div>
               <a href='https://www.instagram.com/sahal.codes/ ' target='_blank'>
-                <img
+                <Image
                   src='/images/instagram-blog.png'
                   alt='sahal-instagram-image'
+                  width={208}
+                  height={112}
                   className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl'
                 />
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
@@ -68,9 +72,11 @@ export default function Blog() {
             </div>
             <div>
               <a href='https://sahaluiux.site/' target='_blank'>
-                <img
+                <Image
                   src='/images/sahal-uiux.png'
                   alt='sahal-uiux-image'
+                  width={208}
+                  height={112}
                   className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
                 />
                 <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white '>

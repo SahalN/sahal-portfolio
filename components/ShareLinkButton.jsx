@@ -1,6 +1,5 @@
-/** @format */
-
 "use client";
+
 import { useState } from "react";
 import { LinkIcon } from "@heroicons/react/20/solid";
 
@@ -10,9 +9,7 @@ export default function ShareLinkButton() {
     navigator.clipboard.writeText(window.location.href);
     setClicked(true);
     setTimeout(() => setClicked(false), 1500);
-    console.log("Clicked");
   };
-  console.log("[ShareLinkButton] Rendering");
   return (
     <button
       onClick={handleClick}

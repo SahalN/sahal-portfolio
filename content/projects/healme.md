@@ -4,8 +4,6 @@ date: "2024-06-20"
 image: "/images/Healme.png"
 ---
 
-<!-- @format -->
-
 **Organization repository:** [HealMe on GitHub](https://github.com/healme-app)  
 **HealMe - Your Path to Faster, Smarter Wound Healing**
 
@@ -23,11 +21,10 @@ HealMe was created to help individuals identify and understand potential skin co
 
 ### Technologies Used
 
-- **Backend:** Python with Flask for building the API and managing server-side logic.
-- **Frontend:** React Native for a mobile-responsive and interactive user interface.
+- **Backend:** ExpressJS and Mongoose for building the API and managing server-side logic.
+- **Frontend:** Kotlin with mobile-responsive and interactive user interface.
 - **AI/ML Model:** TensorFlow for building the image classification model to detect skin diseases.
-- **Database:** Firebase for real-time database management and user data storage.
-- **Authentication:** Firebase Authentication for secure user login and profile management.
+- **Database:** MongoDB for real-time database management and user data storage.
 - **Version Control:** Git for managing code and collaboration.
 
 ### Key Features
@@ -43,12 +40,8 @@ A significant challenge was developing an accurate AI model to correctly classif
 
 ### Roles and Responsibilities
 
-As the lead developer, I was responsible for designing and implementing the backend API, training the AI model, developing the mobile app, and integrating the entire system to deliver a seamless user experience.
+I was responsible for designing and implementing the backend API and managing cloud services.
 
 ### Outcomes and Impact
 
 The application has been successfully deployed and tested, providing users with a convenient method for detecting potential skin conditions. Early feedback from users has been positive, particularly regarding the ease of use and the value of early detection for skin health.
-
-### Future Development
-
-Plans for future development include expanding the dataset to improve the accuracy of the AI model, adding a feature for tracking skin health over time, and integrating telemedicine functionalities to allow users to consult with doctors directly through the app.

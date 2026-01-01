@@ -4,8 +4,6 @@ date: "2023-10-07"
 image: "/images/kidsdrawingapp.svg"
 ---
 
-<!-- @format -->
-
 ### Project Name
 
 MyQuizApp
@@ -22,7 +20,6 @@ This project was built to explore Android development using Kotlin and create a 
 
 - **Programming Language:** Kotlin
 - **IDE:** Android Studio
-- **Frameworks:** Android Jetpack components for navigation and UI
 - **Tools:** Gradle for project build and management
 
 ### Key Features
@@ -54,11 +51,3 @@ This project was built to explore Android development using Kotlin and create a 
 - Successfully delivered a functional quiz app showcasing core Android development skills.
 - Gained practical experience with Kotlin and Android Studio tools.
 - Created a reusable codebase for future Android app development projects.
-
-### Future Development
-
-- Adding a database to store user scores and track progress over time.
-- Including a wider variety of question types, such as true/false and image-based questions.
-- Adding a leaderboard to encourage competition among users.
-- Enhancing the UI with animations and transitions for a better user experience.
-- Integrating APIs to dynamically fetch quiz questions from external sources.
