@@ -29,8 +29,12 @@ export default async function ProjectsPage() {
                   <Link href={`/projects/${project.slug}`}>
                     <Image
                       src={project.image}
-                      alt='ceritadesain'
+                      alt={project.title}
+                      width={208}
+                      height={112}
+                      sizes="(max-width: 768px) 50vw, 208px"
                       className='object-cover mx-auto mb-2 w-52 h-28 rounded-xl '
+                      loading="lazy"
                     />
                     <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
                       {project.title}
