@@ -11,23 +11,9 @@ const nextConfig = {
       },
     ],
   },
-
-  // Compression
   compress: true,
-
-  // React config
   reactStrictMode: false,
   poweredByHeader: false,
-
-  // Experimental features for better performance
-  experimental: {
-    optimizePackageImports: ['framer-motion', 'react-icons'],
-  },
-
-  // Compiler optimizations
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
 };
 
 module.exports = nextConfig;
