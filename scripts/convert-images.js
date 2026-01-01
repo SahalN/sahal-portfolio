@@ -5,7 +5,7 @@ const path = require('path');
 const inputDir = './public/images/projects';
 const outputDir = './public/images/projects';
 
-// Gambar PNG yang perlu dikonversi
+// Gambar PNG dan SVG yang perlu dikonversi
 const imagesToConvert = [
   'cerita-desain.png',
   'Healme.png',
@@ -15,13 +15,22 @@ const imagesToConvert = [
   'kliniku-landing-page.png',
   'sahal-medium.png',
   'sahaln.png',
-  'sahal-uiux.png'
+  'sahal-uiux.png',
+  '7minworkout.svg',
+  'bmkg.svg',
+  'bookshelf-api.svg',
+  'kidsdrawingapp.svg',
+  'music-website.svg',
+  'm-w.svg',
+  'myclasscrud.svg',
+  'myquizapp.svg',
+  'tincat.svg'
 ];
 
 async function convertToWebP() {
   for (const image of imagesToConvert) {
     const inputPath = path.join(inputDir, image);
-    const outputPath = path.join(outputDir, image.replace('.png', '.webp'));
+    const outputPath = path.join(outputDir, image.replace('.png', '.webp').replace('.svg', '.webp'));
 
     try {
       if (!fs.existsSync(inputPath)) {
