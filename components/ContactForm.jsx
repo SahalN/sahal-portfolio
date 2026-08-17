@@ -81,6 +81,22 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}></textarea>
         </label>
+        <p className='text-sm font-light'>
+          {t("home.contact.direct")}{" "}
+          <a
+            href='mailto:sahalnurdin@gmail.com'
+            className='text-[#6d9886] hover:underline'>
+            sahalnurdin@gmail.com
+          </a>
+          {" · "}
+          <a
+            href='https://www.linkedin.com/in/muhammadsahalnurdin/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='text-[#6d9886] hover:underline'>
+            LinkedIn
+          </a>
+        </p>
         <div className='flex justify-end'>
           <button
             type='button'

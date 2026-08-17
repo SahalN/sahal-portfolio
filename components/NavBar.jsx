@@ -42,6 +42,11 @@ export default function NavBar() {
             className='text-sm font-normal hover:underline hover:text-[#6d9886]'>
             {t("nav.blogs")}
           </Link>
+          <Link
+            href='/certifications'
+            className='text-sm font-normal hover:underline hover:text-[#6d9886]'>
+            {t("nav.certifications")}
+          </Link>
           <a
             href='https://github.com/SahalN/sahal-portfolio'
             target='_blank'
@@ -92,6 +97,13 @@ export default function NavBar() {
               href='/blog'
               className='text-sm font-normal hover:underline hover:text-[#6d9886]'>
               {t("nav.blogs")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href='/certifications'
+              className='text-sm font-normal hover:underline hover:text-[#6d9886]'>
+              {t("nav.certifications")}
             </Link>
           </li>
           <li>

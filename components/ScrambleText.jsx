@@ -90,7 +90,7 @@ export default function ScrambleText({ text: rawText, k, className = "" }) {
       <span className='sr-only'>{text}</span>
       <span
         aria-hidden='true'
-        className='col-start-1 row-start-1 whitespace-pre'>
+        className='col-start-1 row-start-1 whitespace-pre-wrap'>
         {display}
       </span>
     </button>

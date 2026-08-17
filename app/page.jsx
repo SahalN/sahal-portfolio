@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { getFeaturedProject } from "../lib/projects";
-import DownloadButton from "../components/DownloadButton";
+import {
+  certifications,
+  getFeaturedCertifications,
+} from "../lib/certifications";
 import Transition from "../components/Transition";
 import Heading from "../components/Heading";
 import RotatingRoles from "../components/RotatingRoles";
@@ -10,18 +13,59 @@ import T from "../components/T";
 import Localized from "../components/Localized";
 import Reveal from "../components/Reveal";
 import ContactForm from "../components/ContactForm";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
+import {
+  SiAngular,
+  SiExpress,
+  SiFirebase,
+  SiGit,
+  SiGo,
+  SiGooglecloud,
+  SiKotlin,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiTailwindcss,
+  SiThreedotjs,
+} from "react-icons/si";
 import Image from "next/image";
 
 export const metadata = {
   title: "Sahal Nurdin - HomePage",
 };
 
+// Names are proper nouns, so they stay identical in both languages.
+const TECH_STACK = [
+  { name: "Golang", Icon: SiGo },
+  { name: "PostgreSQL", Icon: SiPostgresql },
+  { name: "Angular", Icon: SiAngular },
+  { name: "React", Icon: SiReact },
+  { name: "Next.js", Icon: SiNextdotjs },
+  { name: "Tailwind CSS", Icon: SiTailwindcss },
+  { name: "Three.js", Icon: SiThreedotjs },
+  { name: "Node.js", Icon: SiNodedotjs },
+  { name: "Express", Icon: SiExpress },
+  { name: "Laravel", Icon: SiLaravel },
+  { name: "Kotlin", Icon: SiKotlin },
+  { name: "Python", Icon: SiPython },
+  { name: "MySQL", Icon: SiMysql },
+  { name: "MongoDB", Icon: SiMongodb },
+  { name: "Firestore", Icon: SiFirebase },
+  { name: "Google Cloud", Icon: SiGooglecloud },
+  { name: "Git", Icon: SiGit },
+];
+
 export default async function HomePage() {
   const project = await getFeaturedProject();
+  const featuredCertifications = getFeaturedCertifications();
   return (
     <>
       <Transition>
@@ -59,7 +103,9 @@ export default async function HomePage() {
                   />
                 </Reveal>
                 <Reveal from='right' delay={0.35} className='min-w-0'>
-                  <Heading>Muhammad Sahal Nurdin</Heading>
+                  <Heading>
+                    <ScrambleText text='Muhammad Sahal Nurdin' />
+                  </Heading>
                   <p className='text-sm font-light text-left'>
                     <T k='home.tagline' />
                     <span className='block'>
@@ -86,12 +132,77 @@ export default async function HomePage() {
                 <T k='home.about.body' />
               </p>
             </div>
+            <div className='mt-5'>
+              <h2 className='mb-3 text-lg font-bold font-plusJakartaSans'>
+                <ScrambleText
+                  k='home.stack.title'
+                  className='border-b-4 border-current'
+                />
+              </h2>
+              <ul className='flex flex-wrap gap-2'>
+                {TECH_STACK.map(({ name, Icon }) => (
+                  <li
+                    key={name}
+                    className='flex items-center gap-1.5 px-2.5 py-1 text-xs border rounded-full border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/5'>
+                    <Icon aria-hidden='true' className='text-sm' />
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
         <div>
-          {/* <div className='flex justify-center mt-5'>
-            <DownloadButton />
-          </div> */}
+          <h2 className='mt-5 mb-2 text-lg font-bold font-plusJakartaSans'>
+            <ScrambleText
+              k='home.experience.title'
+              className='border-b-4 border-current'
+            />
+          </h2>
+          {/* Add the company name here once you want it public, e.g.
+              <span className='text-gray-500'> · Company Name</span> */}
+          <div className='flex flex-wrap items-baseline gap-x-3'>
+            <p className='font-bold'>
+              <T k='home.experience.role' />
+            </p>
+            <p className='text-sm text-gray-500 dark:text-gray-400'>
+              <T k='home.experience.period' />
+            </p>
+          </div>
+          <p className='mt-1 font-light text-justify'>
+            <T k='home.experience.body' />
+          </p>
+          {featuredCertifications.length > 0 && (
+            <>
+              <h2 className='mt-5 mb-2 text-lg font-bold font-plusJakartaSans'>
+                <ScrambleText
+                  k='home.certs.title'
+                  className='border-b-4 border-current'
+                />
+              </h2>
+              <ul className='space-y-1'>
+                {featuredCertifications.map((item) => (
+                  <li
+                    key={`${item.name}-${item.year}`}
+                    className='flex items-baseline gap-3 text-sm'>
+                    <span className='w-10 font-bold shrink-0'>{item.year}</span>
+                    <span className='font-light'>
+                      {item.name}
+                      <span className='text-gray-500 dark:text-gray-400'>
+                        {" · "}
+                        {item.issuer}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href='/certifications'
+                className='inline-block mt-2 text-sm text-[#6d9886] hover:underline'>
+                <T k='home.certs.all' /> ({certifications.length}) →
+              </Link>
+            </>
+          )}
           <h2 className='mt-5 mb-2 text-lg font-bold font-plusJakartaSans'>
             <ScrambleText
               k='home.bio.title'
@@ -106,15 +217,21 @@ export default async function HomePage() {
           </div>
           <div>
             <div className='flex items-start mt-2 space-x-2'>
-              <span className='font-bold '>2025</span>
+              <span className='font-bold '>2021</span>
               <div>
-                <T k='home.bio.degree' />
+                <T k='home.bio.enrolled' />
+              </div>
+            </div>
+            <div className='flex items-start mt-2 space-x-2'>
+              <span className='font-bold '>2024</span>
+              <div>
+                <T k='home.bio.bangkit' />
               </div>
             </div>
             <div className='flex items-start mt-2 space-x-2'>
               <span className='font-bold '>2025</span>
               <div>
-                <T k='home.bio.work' />
+                <T k='home.bio.degree' />
               </div>
             </div>
           </div>
@@ -150,6 +267,18 @@ export default async function HomePage() {
               />
             </h2>
             <ul className='text-[#6D9886] '>
+              <li>
+                <a
+                  href='https://www.linkedin.com/in/muhammadsahalnurdin/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center mb-2 gap-x-2'>
+                  <div>
+                    <FaLinkedin />
+                  </div>
+                  <div>muhammadsahalnurdin</div>
+                </a>
+              </li>
               <li>
                 <a
                   href='https://github.com/SahalN'
@@ -231,6 +360,13 @@ export default async function HomePage() {
             <h2 className='py-1 font-normal text-center transition-colors font-plusJakartaSans sm:px-2 group-hover:text-[#6d9886] group-focus-visible:text-[#6d9886]'>
               <Localized values={project.titles} />
             </h2>
+          </Link>
+        </div>
+        <div className='mt-3 text-center'>
+          <Link
+            href='/projects'
+            className='text-sm text-[#6d9886] hover:underline'>
+            <T k='home.recent.all' />
           </Link>
         </div>
       </Transition>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { inter, plusJakartaSans } from "./fonts";
 import ThreeDimensionWrapper from "../components/ThreeDimensionWrapper";
 import LanguageProvider from "../components/LanguageProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 
 export const metadata = {
@@ -47,6 +48,9 @@ export default function RootLayout({ children }) {
             <Footer />
           </footer>
         </LanguageProvider>
+        {/* Script and beacon are served from this origin (/_vercel/insights/*),
+            so the CSP in next.config.js needs no exception for it. */}
+        <Analytics />
       </body>
     </html>
   );

@@ -1,2 +1,8 @@
 /.next/
 /node_modules/
+
+# Secrets: .env.example is the only env file that belongs in git.
+.env
+.env.local
+.env.*.local
+.vercel

@@ -38,16 +38,20 @@ export default function Typewriter({ text: rawText, k, speed = 45, startDelay = 
     hasTyped = true;
     setIsTyping(true);
 
+    // Progress is tracked here rather than inside a setCount updater: React
+    // runs updaters during render, so calling clearInterval/setIsTyping in
+    // there is a side effect in the render phase.
+    let typed = 0;
+
     timers.current.start = setTimeout(() => {
       timers.current.typing = setInterval(() => {
-        setCount((prev) => {
-          if (prev >= text.length) {
-            clearInterval(timers.current.typing);
-            setIsTyping(false);
-            return prev;
-          }
-          return prev + 1;
-        });
+        typed += 1;
+        setCount(typed);
+
+        if (typed >= text.length) {
+          clearInterval(timers.current.typing);
+          setIsTyping(false);
+        }
       }, speed);
     }, startDelay);
 

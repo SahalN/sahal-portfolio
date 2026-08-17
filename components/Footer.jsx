@@ -1,15 +1,16 @@
 import T from "./T";
+import VisitorCount from "./VisitorCount";
 
 export default function Footer() {
   return (
     <>
-      <a
-        href='https://www.linkedin.com/in/muhammadsahalnurdin/'
-        target='_blank'
-        rel='noopener noreferrer'
-        className='text-gray-500 hover:underline dark:text-gray-100'>
+      {/* Plain text: the copyright line used to be the only link to LinkedIn,
+          which nobody would think to click. LinkedIn now sits in My Socials
+          and next to the contact form instead. */}
+      <span className='text-gray-500 dark:text-gray-100'>
         <T k='footer.rights' />
-      </a>
+      </span>
+      <VisitorCount />
     </>
   );
 }
