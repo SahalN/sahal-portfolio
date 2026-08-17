@@ -1,90 +1,89 @@
 import Image from "next/image";
 import Heading from "../../components/Heading";
 import Transition from "../../components/Transition";
+import ScrambleText from "../../components/ScrambleText";
+import T from "../../components/T";
 
 export const metadata = {
   title: "Blogs",
 };
+
+const BLOGS = [
+  {
+    key: "blog.medium",
+    platform: "Medium",
+    href: "https://medium.com/@sahalnurdin",
+    image: "/images/sahal-medium.png",
+    alt: "sahal-medium-image",
+  },
+  {
+    key: "blog.university",
+    platform: "Blogspot",
+    href: "https://muhammadsahalnurdin.blogspot.com/",
+    image: "/images/sahal-blogger.png",
+    alt: "sahal-blogger-image",
+  },
+  {
+    key: "blog.instagram",
+    platform: "Instagram",
+    href: "https://www.instagram.com/sahal.codes/",
+    image: "/images/instagram-blog.png",
+    alt: "sahal-instagram-image",
+  },
+  {
+    key: "blog.uiux",
+    platform: "sahaluiux.site",
+    href: "https://sahaluiux.site/",
+    image: "/images/sahal-uiux.png",
+    alt: "sahal-uiux-image",
+  },
+];
 
 export default function Blog() {
   return (
     <>
       <Transition>
         <div>
-          <div className='mb-2'>
-            <div>
-              <Heading>My Blogs</Heading>
-            </div>
-            <div className='mb-5'>
-              <p className='text-sm font-light text-justify indent-4'>
-                This page is dedicated to my personal blog, where I discuss
-                various topics related to programming, UI/UX design, and my
-                learning experiences during university. Explore detailed posts,
-                tutorials, and reflections on the methods and techniques I use
-                in my work and studies.
-              </p>
-            </div>
+          <div className='mb-5'>
+            <Heading>
+              <ScrambleText k='blog.title' />
+            </Heading>
+            <p className='text-sm font-light text-justify indent-4'>
+              <T k='blog.intro' />
+            </p>
           </div>
-          <div className='grid grid-cols-2 gap-4 justify-items-stretch'>
-            <div>
-              <a href='https://medium.com/@sahalnurdin' target='_blank'>
-                <Image
-                  src='/images/sahal-medium.png'
-                  alt='sahal-medium-image'
-                   width={208}
-                   height={112}
-                  className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
-                />
-                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                  Sahal's Programming Blog on Medium
-                </h2>
-              </a>
-            </div>
-            <div>
-              <a
-                href='https://muhammadsahalnurdin.blogspot.com/'
-                target='_blank'>
-                <Image
-                  src='/images/sahal-blogger.png'
-                  alt='sahal-blogger-image'
-                  width={208}
-                  height={112}
-                  className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
-                />
-                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                  Sahal's University Journey Blog
-                </h2>
-              </a>
-            </div>
-            <div>
-              <a href='https://www.instagram.com/sahal.codes/ ' target='_blank'>
-                <Image
-                  src='/images/instagram-blog.png'
-                  alt='sahal-instagram-image'
-                  width={208}
-                  height={112}
-                  className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl'
-                />
-                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                  Sahal's Instagram Coding Blog
-                </h2>
-              </a>
-            </div>
-            <div>
-              <a href='https://sahaluiux.site/' target='_blank'>
-                <Image
-                  src='/images/sahal-uiux.png'
-                  alt='sahal-uiux-image'
-                  width={208}
-                  height={112}
-                  className='object-cover mx-auto mb-2 h-28 w-52 rounded-xl '
-                />
-                <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white '>
-                  Sahal's UI and UX Blog Reviews
-                </h2>
-              </a>
-            </div>
-          </div>
+          <ul className='grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2'>
+            {BLOGS.map((blog) => (
+              <li key={blog.href}>
+                <a
+                  href={blog.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block group'>
+                  <div className='overflow-hidden rounded-xl'>
+                    <Image
+                      src={blog.image}
+                      alt={blog.alt}
+                      width={416}
+                      height={234}
+                      sizes='(max-width: 640px) 100vw, 50vw'
+                      className='object-cover w-full transition-transform duration-500 ease-out aspect-video motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105'
+                      loading='lazy'
+                    />
+                  </div>
+                  <p className='mt-2 text-[11px] font-medium tracking-widest text-gray-500 uppercase dark:text-gray-400'>
+                    {blog.platform}
+                  </p>
+                  <h2 className='text-sm font-normal transition-colors font-plusJakartaSans group-hover:text-[#6d9886] group-focus-visible:text-[#6d9886]'>
+                    <T k={blog.key} />
+                    <span aria-hidden='true' className='ml-1'>
+                      ↗
+                    </span>
+                  </h2>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </Transition>
     </>

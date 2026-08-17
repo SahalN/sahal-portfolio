@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import "./globals.css";
 import { inter, plusJakartaSans } from "./fonts";
 import ThreeDimensionWrapper from "../components/ThreeDimensionWrapper";
+import LanguageProvider from "../components/LanguageProvider";
 
 
 export const metadata = {
@@ -33,21 +34,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en' className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <head>
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-      </head>
       <body className='flex flex-col bg-[#F6F6F6] dark:bg-[#212121] text-black dark:text-white'>
-        <header>
-          <NavBar />
-          <ThreeDimensionWrapper/>
-        </header>
-        <main className='relative px-6 py-3 -mt-44 md:-mt-72 grow md:px-64 lg:px-[500px]'>
-          {children}
-        </main>
-        <footer className='py-3 text-xs text-center text-slate-50 px-6 md:px-64 lg:px-[500px]'>
-          <Footer />
-        </footer>
+        <LanguageProvider>
+          <header>
+            <NavBar />
+            <ThreeDimensionWrapper/>
+          </header>
+          <main className='relative px-6 py-3 -mt-44 md:-mt-72 grow md:px-64 lg:px-[500px]'>
+            {children}
+          </main>
+          <footer className='py-3 text-xs text-center text-slate-50 px-6 md:px-64 lg:px-[500px]'>
+            <Footer />
+          </footer>
+        </LanguageProvider>
       </body>
     </html>
   );

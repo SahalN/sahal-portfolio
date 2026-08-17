@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
+import { useLanguage } from "./LanguageProvider";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,51 +30,66 @@ export default function ContactForm() {
     window.location.href = mailtoLink;
   };
 
+  // Underline-only fields: one hairline per input instead of four filled
+  // blocks, so the form reads as a document rather than a widget.
+  const fieldClass =
+    "w-full px-0 py-2 text-sm bg-transparent border-0 border-b rounded-none outline-none border-black/15 dark:border-white/20 placeholder:text-transparent focus:border-[#6D9886] transition-colors";
+  const labelClass =
+    "block mb-1 text-[11px] font-medium tracking-widest uppercase text-gray-500 dark:text-gray-400";
+
   return (
-    <div className='max-w-4xl gap-16 mx-auto'>
-      <form className='ml-auto space-y-4' onSubmit={(e) => e.preventDefault()}>
-        <input
-          type='text'
-          name='name'
-          placeholder='Your Name'
-          className=' dark:placeholder:text-white w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <input
-          type='email'
-          name='email'
-          placeholder='Your Email'
-          className='dark:placeholder:text-white w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type='text'
-          name='subject'
-          placeholder='Subject'
-          className='w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 dark:placeholder:text-white text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886]'
-          value={formData.subject}
-          onChange={handleChange}
-        />
-        <textarea
-          name='message'
-          placeholder='Your Message'
-          rows='6'
-          className='w-full rounded-md py-3 px-4 bg-[#dddddd] placeholder:text-gray-800 text-gray-800 dark:bg-[#363639] dark:text-white text-sm outline-[#6D9886] dark:placeholder:text-white'
-          value={formData.message}
-          onChange={handleChange}></textarea>
-        <button
-          type='button'
-          className='dark:placeholder:text-white text-white bg-[#6D9886] hover:bg-[#a7c1b6] tracking-wide rounded-md text-sm px-4 py-3 w-full !mt-6'
-          onClick={handleSubmit}>
-          <div className='flex flex-row items-center justify-center gap-2'>
-            <div>Send Message</div>
-            <div>
-              <IoSend />
-            </div>
-          </div>
-        </button>
+    <div className='w-full'>
+      <form className='w-full space-y-4' onSubmit={(e) => e.preventDefault()}>
+        <div className='grid gap-4 sm:grid-cols-2'>
+          <label className='block'>
+            <span className={labelClass}>{t("form.name")}</span>
+            <input
+              type='text'
+              name='name'
+              className={fieldClass}
+              value={formData.name}
+              onChange={handleChange}
+            />
+          </label>
+          <label className='block'>
+            <span className={labelClass}>{t("form.email")}</span>
+            <input
+              type='email'
+              name='email'
+              className={fieldClass}
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <label className='block'>
+          <span className={labelClass}>{t("form.subject")}</span>
+          <input
+            type='text'
+            name='subject'
+            className={fieldClass}
+            value={formData.subject}
+            onChange={handleChange}
+          />
+        </label>
+        <label className='block'>
+          <span className={labelClass}>{t("form.message")}</span>
+          <textarea
+            name='message'
+            rows='4'
+            className={`${fieldClass} resize-none`}
+            value={formData.message}
+            onChange={handleChange}></textarea>
+        </label>
+        <div className='flex justify-end'>
+          <button
+            type='button'
+            className='inline-flex items-center gap-2 px-6 py-2.5 text-sm tracking-wide text-white transition-colors bg-[#6D9886] rounded-md hover:bg-[#5c8474] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6D9886] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F6F6] dark:focus-visible:ring-offset-[#212121]'
+            onClick={handleSubmit}>
+            {t("form.send")}
+            <IoSend className='text-xs' />
+          </button>
+        </div>
       </form>
     </div>
   );

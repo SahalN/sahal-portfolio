@@ -2,6 +2,9 @@ import Link from "next/link";
 import { getProjects } from "../../lib/projects";
 import Transition from "../../components/Transition";
 import Heading from "../../components/Heading";
+import ScrambleText from "../../components/ScrambleText";
+import T from "../../components/T";
+import Localized from "../../components/Localized";
 import Image from "next/image";
 
 export const metadata = {
@@ -15,35 +18,38 @@ export default async function ProjectsPage() {
       <Transition>
         <div>
           <div className='mb-5'>
-            <Heading>Projects</Heading>
+            <Heading>
+              <ScrambleText k='projects.title' />
+            </Heading>
             <p className='text-sm font-light text-justify indent-4'>
-              Explore my latest projects, where creativity meets functionality.
-              Each project reflects my dedication to quality and my passion for
-              bringing ideas to life.
+              <T k='projects.intro' />
             </p>
           </div>
-          <div>
-            <ul className='grid grid-cols-2 gap-4 justify-items-stretch'>
-              {projects.map((project) => (
-                <li key={project.slug}>
-                  <Link href={`/projects/${project.slug}`}>
+          <ul className='grid grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2'>
+            {projects.map((project) => (
+              <li key={project.slug}>
+                <Link href={`/projects/${project.slug}`} className='block group'>
+                  <div className='overflow-hidden rounded-xl'>
                     <Image
                       src={project.image}
                       alt={project.title}
-                      width={208}
-                      height={112}
-                      sizes="(max-width: 768px) 50vw, 208px"
-                      className='object-cover mx-auto mb-2 w-52 h-28 rounded-xl '
-                      loading="lazy"
+                      width={416}
+                      height={234}
+                      sizes='(max-width: 640px) 100vw, 50vw'
+                      className='object-cover w-full transition-transform duration-500 ease-out aspect-video motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105'
+                      loading='lazy'
                     />
-                    <h2 className='py-1 font-normal text-center text-black font-plusJakartaSans dark:text-white'>
-                      {project.title}
-                    </h2>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  </div>
+                  <p className='mt-2 text-[11px] font-medium tracking-widest text-gray-500 uppercase dark:text-gray-400'>
+                    {project.date.slice(0, 4)}
+                  </p>
+                  <h2 className='text-sm font-normal transition-colors font-plusJakartaSans group-hover:text-[#6d9886] group-focus-visible:text-[#6d9886]'>
+                    <Localized values={project.titles} />
+                  </h2>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Transition>
     </>

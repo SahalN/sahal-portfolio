@@ -3,6 +3,12 @@ import { getFeaturedProject } from "../lib/projects";
 import DownloadButton from "../components/DownloadButton";
 import Transition from "../components/Transition";
 import Heading from "../components/Heading";
+import RotatingRoles from "../components/RotatingRoles";
+import Typewriter from "../components/Typewriter";
+import ScrambleText from "../components/ScrambleText";
+import T from "../components/T";
+import Localized from "../components/Localized";
+import Reveal from "../components/Reveal";
 import ContactForm from "../components/ContactForm";
 import { FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -21,65 +27,94 @@ export default async function HomePage() {
       <Transition>
         <div className='flex flex-row justify-center gap-8 md:flex-col -z-20 '>
           <div className='flex flex-col justify-center text-left top-96'>
-            <div className='py-4 bg-[#ffffffcc] dark:bg-[#ffffff5c] px-8 rounded-lg backdrop-filter backdrop-blur-lg bg-opacity-40 '>
-              <p className='text-sm text-center '>
-                Hello, I’m an fullstack app developer based in Indonesia!
-              </p>
-            </div>
-            <div className='flex flex-row items-center justify-center mt-5'>
-              <div>
-                <Heading>Muhammad Sahal Nurdin</Heading>
-                <p className='text-sm font-light text-left'>
-                  Love to build Digital Things (Developer/3D Generalist/UI
-                  Designer)
+            {/* The bubble and the row below share one centred, content-width
+                column, so the tail can sit exactly over the photo. */}
+            <div className='max-w-full mx-auto w-fit'>
+              <Reveal
+                from='pop'
+                delay={0.1}
+                className='relative px-8 py-4 border shadow-lg rounded-2xl border-white/50 dark:border-white/15 bg-white/30 dark:bg-white/10 backdrop-blur-2xl backdrop-saturate-150 shadow-black/10'>
+                <p className='text-sm text-center '>
+                  <Typewriter k='home.hero' />
                 </p>
-              </div>
-              <div>
-                <Image
-                  src='/images/sahaln.png'
-                  alt='foto-sahal'
-                  width={96}
-                  height={96}
-                  className='w-24 border-2 border-white rounded-full'
-                  priority
-                />
+                {/* Bubble tail, centred on the photo below it. The rotated
+                    square is clipped to the part that sticks out: left whole,
+                    its top half ghosts through the translucent bubble as a
+                    floating diamond. */}
+                <span
+                  aria-hidden='true'
+                  className='absolute overflow-hidden left-[38px] top-full h-2.5 w-5'>
+                  <span className='block w-3.5 h-3.5 mx-auto -mt-[7px] rotate-45 bg-white/30 dark:bg-white/10 backdrop-blur-2xl backdrop-saturate-150' />
+                </span>
+              </Reveal>
+              <div className='flex flex-row items-center gap-4 mt-5'>
+                <Reveal from='left' delay={0.35} className='shrink-0'>
+                  <Image
+                    src='/images/sahaln.png'
+                    alt='foto-sahal'
+                    width={96}
+                    height={96}
+                    className='w-24 border-2 border-white rounded-full'
+                    priority
+                  />
+                </Reveal>
+                <Reveal from='right' delay={0.35} className='min-w-0'>
+                  <Heading>Muhammad Sahal Nurdin</Heading>
+                  <p className='text-sm font-light text-left'>
+                    <T k='home.tagline' />
+                    <span className='block'>
+                      <RotatingRoles
+                        roleKeys={[
+                          "home.role.developer",
+                          "home.role.3d",
+                          "home.role.ui",
+                        ]}
+                      />
+                    </span>
+                  </p>
+                </Reveal>
               </div>
             </div>
             <div className='mt-3'>
-              <h2 className='text-lg font-bold underline font-plusJakartaSans decoration-4 '>
-                About
+              <h2 className='text-lg font-bold font-plusJakartaSans'>
+                <ScrambleText
+                  k='home.about.title'
+                  className='border-b-4 border-current'
+                />
               </h2>
               <p className='mt-2 font-light text-justify indent-4'>
-                Sahal is a full-stack developer with a deep passion for building
-                digital innovations. With a keen eye for detail and a knack for
-                problem-solving, he brings creative ideas to life through code.
-                Whether it's designing user-friendly interfaces or tackling
-                complex backend challenges, Sahal's expertise shines through in
-                every project. His dedication to crafting digital solutions that
-                make a difference is what sets him apart in the world of
-                technology. From front-end aesthetics to the intricacies of
-                back-end functionality.
+                <T k='home.about.body' />
               </p>
             </div>
           </div>
         </div>
         <div>
-          <div className='flex justify-center mt-5'>
+          {/* <div className='flex justify-center mt-5'>
             <DownloadButton />
-          </div>
-          <h2 className='mt-5 mb-2 text-lg font-bold underline font-plusJakartaSans decoration-4'>
-            Bio
+          </div> */}
+          <h2 className='mt-5 mb-2 text-lg font-bold font-plusJakartaSans'>
+            <ScrambleText
+              k='home.bio.title'
+              className='border-b-4 border-current'
+            />
           </h2>
           <div className='flex space-x-2'>
             <span className='my-auto font-bold'>2003</span>
-            <div>Born in Jakarta, Indonesia</div>
+            <div>
+              <T k='home.bio.born' />
+            </div>
           </div>
           <div>
             <div className='flex items-start mt-2 space-x-2'>
               <span className='font-bold '>2025</span>
               <div>
-                Completed a Bachelor's degree in Computer Science at Gunadarma
-                University.
+                <T k='home.bio.degree' />
+              </div>
+            </div>
+            <div className='flex items-start mt-2 space-x-2'>
+              <span className='font-bold '>2025</span>
+              <div>
+                <T k='home.bio.work' />
               </div>
             </div>
           </div>
@@ -89,29 +124,37 @@ export default async function HomePage() {
       <Transition>
         <div className='mt-5 '>
           <div className='mt-5'>
-            <h2 className='mt-5 mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4 '>
-              Hobby
+            <h2 className='mt-5 mb-2 text-lg font-bold font-plusJakartaSans'>
+              <ScrambleText
+                k='home.hobby.title'
+                className='border-b-4 border-current'
+              />
             </h2>
             <p className='font-normal text-justify indent-4'>
-              UI/UX design, drawing,{" "}
+              <T k='home.hobby.before' />
               <a
                 className='text-[#6d9886]'
                 href='https://www.artstation.com/sahalnurdin'
-                target='_blank'>
-                3D environment design
+                target='_blank'
+                rel='noopener noreferrer'>
+                <T k='home.hobby.link' />
               </a>
-              , listening to music, and reading books.
+              <T k='home.hobby.after' />
             </p>
           </div>
           <div className='mt-5 '>
-            <h2 className='mb-2 text-lg font-bold underline font-plusJakartaSans decoration-4 underline-offset-4'>
-              My Socials
+            <h2 className='mb-2 text-lg font-bold font-plusJakartaSans'>
+              <ScrambleText
+                k='home.socials.title'
+                className='border-b-4 border-current'
+              />
             </h2>
             <ul className='text-[#6D9886] '>
               <li>
                 <a
                   href='https://github.com/SahalN'
                   target='_blank'
+                  rel='noopener noreferrer'
                   className='flex items-center mb-2 gap-x-2'>
                   <div>
                     <FaGithub />
@@ -123,6 +166,7 @@ export default async function HomePage() {
                 <a
                   href='https://x.com/sahalnurdin_'
                   target='_blank'
+                  rel='noopener noreferrer'
                   className='flex items-center mb-2 gap-x-2'>
                   <div>
                     <FaXTwitter />
@@ -134,6 +178,7 @@ export default async function HomePage() {
                 <a
                   href='https://www.instagram.com/sahal.codes?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=='
                   target='_blank'
+                  rel='noopener noreferrer'
                   className='flex items-center mb-2 gap-x-2'>
                   <div>
                     <FaInstagram />
@@ -145,6 +190,7 @@ export default async function HomePage() {
                 <a
                   href='https://www.facebook.com/sahal.nurdin.58/?locale=id_ID'
                   target='_blank'
+                  rel='noopener noreferrer'
                   className='flex items-center mb-2 gap-x-2'>
                   <div>
                     <FaFacebook />
@@ -158,23 +204,32 @@ export default async function HomePage() {
       </Transition>
       <Transition>
         <div className='mt-5 '>
-          <h2 className='mb-5 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
-            My Recent Project
+          <h2 className='mb-5 text-lg font-bold font-plusJakartaSans'>
+            <ScrambleText
+              k='home.recent.title'
+              className='border-b-4 border-current'
+            />
           </h2>
         </div>
         <div className='flex justify-center rounded'>
-          <Link href={`/projects/${project.slug}`}>
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={450}
-              className='object-cover w-full h-auto rounded-xl'
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority
-            />
-            <h2 className='py-1 font-normal text-center font-plusJakartaSans sm:px-2'>
-              {project.title}
+          <Link href={`/projects/${project.slug}`} className='block group'>
+            <div className='relative overflow-hidden rounded-xl'>
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={450}
+                className='object-cover w-full h-auto transition-transform duration-500 ease-out motion-safe:group-hover:scale-105 motion-safe:group-focus-visible:scale-105'
+                sizes="(max-width: 768px) 100vw, 800px"
+                priority
+              />
+              <div className='absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent group-hover:opacity-100 group-focus-visible:opacity-100' />
+              <span className='absolute px-3 py-1 text-sm font-medium text-white transition duration-300 translate-y-2 border rounded-full opacity-0 pointer-events-none bottom-4 left-4 border-white/30 bg-white/20 backdrop-blur-md group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100'>
+                <T k='home.recent.cta' />
+              </span>
+            </div>
+            <h2 className='py-1 font-normal text-center transition-colors font-plusJakartaSans sm:px-2 group-hover:text-[#6d9886] group-focus-visible:text-[#6d9886]'>
+              <Localized values={project.titles} />
             </h2>
           </Link>
         </div>
@@ -182,16 +237,17 @@ export default async function HomePage() {
       <Transition>
         <div className='flex flex-col mt-4'>
           <div>
-            <h2 className='mb-2 text-lg font-bold underline underline-offset-4 font-plusJakartaSans decoration-4'>
-              Get in Touch
+            <h2 className='mb-2 text-lg font-bold font-plusJakartaSans'>
+              <ScrambleText
+                k='home.contact.title'
+                className='border-b-4 border-current'
+              />
             </h2>
             <p className='mb-2 text-sm font-light text-justify indent-4'>
-              I’d love to hear from you! Whether you have a question, a project
-              idea, or just want to connect, drop me a message, and I’ll get
-              back to you soon.
+              <T k='home.contact.body' />
             </p>
           </div>
-          <div className='max-w-4xl gap-16 mx-auto '>
+          <div className='w-full'>
             <ContactForm />
           </div>
         </div>
