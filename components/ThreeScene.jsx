@@ -15,9 +15,6 @@ const ThreeScene = () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    // Phones and tablets: pointer is a finger, not a mouse.
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(90, 1, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -65,18 +62,20 @@ const ThreeScene = () => {
     controls.dampingFactor = 0.25;
     controls.screenSpacePanning = true;
 
-    // OrbitControls sets touch-action:none on the canvas ("disable touch
-    // scroll" in its own source), which would make a full-width moon swallow
-    // page scrolling entirely. "pan-y" splits the gestures instead: the browser
-    // keeps vertical swipes for scrolling, and every horizontal drag reaches
-    // the controls, so the moon spins on the axis people actually reach for.
-    if (isTouch) {
-      renderer.domElement.style.touchAction = "pan-y";
-      controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.ROTATE };
-      // Pinch-zoom and panning would fight the browser's own gestures.
-      controls.enableZoom = false;
-      controls.enablePan = false;
-    }
+    // Touch gets the same freedom as the mouse: one finger orbits on both
+    // axes, two fingers pinch to zoom and twist. OrbitControls keeps
+    // touch-action:none on the canvas for this, which is why a swipe started
+    // on top of the moon turns it instead of scrolling the page.
+    controls.touches = {
+      ONE: THREE.TOUCH.ROTATE,
+      TWO: THREE.TOUCH.DOLLY_ROTATE,
+    };
+    controls.enableZoom = true;
+
+    // Bounds so a hard pinch cannot leave the visitor staring at empty space
+    // with no way back.
+    controls.minDistance = 1.2;
+    controls.maxDistance = 8;
 
     let frame = null;
 
