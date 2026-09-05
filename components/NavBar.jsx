@@ -16,9 +16,11 @@ export default function NavBar() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  // The bar itself stays full width so the blur spans the viewport; only its
+  // contents sit in the same column as <main> and <footer>.
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 px-6 md:px-64 lg:px-[500px] backdrop-filter backdrop-blur-lg bg-opacity-40 py-2'>
-      <div className='flex items-center justify-between md:px-0'>
+    <nav className='fixed top-0 left-0 right-0 z-50 py-2 backdrop-filter backdrop-blur-lg bg-opacity-40'>
+      <div className='flex items-center justify-between w-full max-w-3xl px-6 mx-auto sm:px-8'>
         <Link
           href='/'
           className='flex items-center gap-2 text-xl font-bold hover:underline font-plusJakartaSans'>
@@ -82,7 +84,9 @@ export default function NavBar() {
         </button>
       </div>
       <div
-        className={`${isMenuOpen ? "block" : "hidden"} w-full md:hidden`}
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } w-full max-w-3xl px-6 mx-auto sm:px-8 md:hidden`}
         id='navbar-hamburger'>
         <ul className='flex flex-col items-center gap-6 my-3'>
           <li>

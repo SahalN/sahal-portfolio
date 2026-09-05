@@ -30,13 +30,7 @@ const BLOGS = [
     image: "/images/instagram-blog.png",
     alt: "sahal-instagram-image",
   },
-  {
-    key: "blog.uiux",
-    platform: "sahaluiux.site",
-    href: "https://sahaluiux.site/",
-    image: "/images/sahal-uiux.png",
-    alt: "sahal-uiux-image",
-  },
+  
 ];
 
 export default function Blog() {

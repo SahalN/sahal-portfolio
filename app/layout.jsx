@@ -34,17 +34,29 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en' className={`${inter.variable} ${plusJakartaSans.variable}`}>
-      <body className='flex flex-col bg-[#F6F6F6] dark:bg-[#212121] text-black dark:text-white'>
+    // Browser extensions add their own attributes to <html> and <body> before
+    // React hydrates (ColorZilla's cz-shortcut-listen, for one), and the theme
+    // class is written to <html> on the client. suppressHydrationWarning covers
+    // only these two elements' own attributes, so real mismatches deeper in the
+    // tree are still reported.
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className={`${inter.variable} ${plusJakartaSans.variable}`}>
+      <body
+        suppressHydrationWarning
+        className='flex flex-col bg-[#F6F6F6] dark:bg-[#212121] text-black dark:text-white'>
         <LanguageProvider>
           <header>
             <NavBar />
             <ThreeDimensionWrapper/>
           </header>
-          <main className='relative px-6 py-3 -mt-44 md:-mt-72 grow md:px-64 lg:px-[500px]'>
+          {/* A centred max-width column instead of huge side padding: padding
+              that big collapsed the content to 24px on a 1024px tablet. */}
+          <main className='relative w-full max-w-3xl px-6 py-3 mx-auto -mt-44 md:-mt-72 grow sm:px-8'>
             {children}
           </main>
-          <footer className='py-3 text-xs text-center text-slate-50 px-6 md:px-64 lg:px-[500px]'>
+          <footer className='w-full max-w-3xl px-6 py-3 mx-auto text-xs text-center text-slate-50 sm:px-8'>
             <Footer />
           </footer>
         </LanguageProvider>
