@@ -66,12 +66,16 @@ const ThreeScene = () => {
     controls.screenSpacePanning = true;
 
     // OrbitControls sets touch-action:none on the canvas ("disable touch
-    // scroll" in its own source), which would turn a full-width moon into a
-    // dead zone that swallows page scrolling. Touch devices get a moon that
-    // only spins by itself; dragging over it scrolls the page as usual.
+    // scroll" in its own source), which would make a full-width moon swallow
+    // page scrolling entirely. "pan-y" splits the gestures instead: the browser
+    // keeps vertical swipes for scrolling, and every horizontal drag reaches
+    // the controls, so the moon spins on the axis people actually reach for.
     if (isTouch) {
-      controls.enabled = false;
-      renderer.domElement.style.touchAction = "auto";
+      renderer.domElement.style.touchAction = "pan-y";
+      controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.ROTATE };
+      // Pinch-zoom and panning would fight the browser's own gestures.
+      controls.enableZoom = false;
+      controls.enablePan = false;
     }
 
     let frame = null;
